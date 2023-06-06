@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { MdOutlineToys } from "react-icons/md";
+
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FcSportsMode } from "react-icons/fc";
 
