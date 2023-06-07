@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
+import { saveUser } from "../../api/auth";
 
 
 const Register = () => {
@@ -32,6 +33,7 @@ const Register = () => {
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
       .then(()=>{
+        saveUser(result.user)
        navigate('/login')
       })
       .catch(err=>{
@@ -49,6 +51,7 @@ const Register = () => {
   const handleGoogleSignIn = () => {
    signInGoogle()
       .then(result => {
+        saveUser(result.user)
         console.log(result.user)
         navigate(from, { replace: true })
       })
@@ -58,7 +61,7 @@ const Register = () => {
         toast.error(err.message)
       })
   }
-  
+
 
 
   return (

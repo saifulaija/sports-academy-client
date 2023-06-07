@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
+import { saveUser } from "../../api/auth";
 
 
 const Login = () => {
@@ -43,6 +44,7 @@ const Login = () => {
     signInGoogle()
        .then(result => {
          console.log(result.user)
+         saveUser(result.user)
          navigate(from, { replace: true })
        })
        .catch(err => {
@@ -51,8 +53,7 @@ const Login = () => {
          toast.error(err.message)
        })
    }
-   
-
+  
   return (
     <div className="w-full bg-cyan-300">
       <div className="md:flex justify-center gap-16 items-center max-w-[1280px] mx-auto">
