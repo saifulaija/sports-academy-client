@@ -4,14 +4,28 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FcSportsMode } from "react-icons/fc";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleNav = () => {
     setNavOpen(!navOpen);
   };
+
+  const handleLogout = ()=>{
+    logOut()
+    .then(()=>{
+      toast.success('Logout successful')
+
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+   
+  }
+
 
   const navItem = (
     <>
@@ -41,8 +55,11 @@ const Navbar = () => {
              Dashboard
             </NavLink>
           </li>
+          <li>{user.displayName}</li>
+          <li><img className="w-[30px] rounded-full" src={user?.photoURL} alt="" /></li>
           <li>
             <NavLink
+            onClick={handleLogout}
               className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
               to="/login"
             >

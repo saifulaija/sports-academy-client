@@ -1,27 +1,65 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
 import loginImage from "../../../src/assets/login.jpg";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
+
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const {createUser, updateUserProfile, signInGoogle, setLoading} = useContext(AuthContext)
+  
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
+
+  
 
   const {
     register,
     handleSubmit,
+   
 
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
-    });
+      updateUserProfile(data.name, data.photoURL)
+      .then(()=>{
+       navigate('/login')
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+     
+    })
+    .catch(err=>{
+      console.log(err);
+    })
   };
+
+
+  
+  const handleGoogleSignIn = () => {
+   signInGoogle()
+      .then(result => {
+        console.log(result.user)
+        navigate(from, { replace: true })
+      })
+      .catch(err => {
+        setLoading(false)
+        console.log(err.message)
+        toast.error(err.message)
+      })
+  }
+  
+
 
   return (
     <div className="w-full bg-neutral-300">
@@ -127,7 +165,7 @@ const Register = () => {
                   </div>
                   <input
                     type="url"
-                    {...register("photo")}
+                    {...register("photoURL")}
                     placeholder="Photo URL"
                     className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                   />
@@ -151,7 +189,7 @@ const Register = () => {
               </p>
               <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
             </div>
-            <div className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
+            <div onClick={handleGoogleSignIn} className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
               <FcGoogle size={32} />
 
               <p>Continue with Google</p>
