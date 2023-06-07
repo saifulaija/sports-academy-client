@@ -54,7 +54,7 @@ const Login = () => {
                     type="email"
                     {...register("email")}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
             </div>
@@ -68,7 +68,7 @@ const Login = () => {
                     type="password"
                     {...register("password")}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
             </div>
@@ -77,7 +77,7 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              className='bg-rose-500 w-full rounded-md py-3 text-white'
+              className='bg-indigo-500 w-full rounded-md py-3 text-white'
             >
               Continue
             </button>

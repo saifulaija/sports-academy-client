@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import loginImage from "../../../src/assets/login.jpg";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -13,7 +17,10 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    createUser(data.email, data.password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    });
   };
 
   return (
@@ -45,10 +52,9 @@ const Register = () => {
                     type="text"
                     {...register("name", { required: true })}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
-                 
                 </div>
                 <div>
                   <label htmlFor="email" className="block mb-2 text-sm">
@@ -58,7 +64,7 @@ const Register = () => {
                     type="email"
                     {...register("email")}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
                 </div>
@@ -69,31 +75,36 @@ const Register = () => {
                     </label>
                   </div>
                   <input
-                type="password"
-                {...register("password", {
-                  required: true,
-                  minLength: 6,
-                  maxLength: 20,
-                  pattern:/(?=.*[A-Z])/,
-                //  TODO Validati0n
+                    type="password"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    {...register("password", {
+                      required: true,
+                      minLength: 6,
+                      pattern:/^(?=.*[A-Z])(?=.*[!@#$&*])/ 
+
+                      //  TODO Validati0n
+                    })}
+                    placeholder="password"
+                    // className="input input-bordered"
+                  />
                   
-                })}
-                placeholder="password"
-                className="input input-bordered"
-              />
-                  {errors.password && (
-                <span className="text-red-800">
-                  Password at least 6 character
-                </span>
-              )}
-              {errors.password?.type === 'pattern' && (
-                <span className="text-red-800">
-                  at least one character uppercase
-                </span>
-              )}
-              {errors.password?.type === "required" && (
-                <span className="text-red-800">password is required</span>
-              )}
+                  {errors.password?.type === 'required' && 
+                    <p className="text-red-600">
+                      Password is required
+                    </p>
+                  }
+                  {errors.password?.type === 'minLength' && 
+                    <p className="text-red-600">
+                      Password is at lest 6 character
+                    </p>
+                  }
+                  {errors.password?.type === 'pattern' && 
+                    <p className="text-red-600">
+                      Password is must one uppercase & one special character
+                    </p>
+                  }
+                 
+                  
                 </div>
                 <div>
                   <div className="flex justify-between">
@@ -105,7 +116,7 @@ const Register = () => {
                     type="password"
                     {...register("confirm")}
                     placeholder="*******"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                   />
                 </div>
                 <div>
@@ -118,7 +129,7 @@ const Register = () => {
                     type="url"
                     {...register("photo")}
                     placeholder="Photo URL"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                   />
                 </div>
               </div>
@@ -126,7 +137,7 @@ const Register = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-rose-500 w-full rounded-md py-3 text-white"
+                  className="bg-indigo-500 w-full rounded-md py-3 text-white"
                 >
                   Register Now
                 </button>
@@ -153,7 +164,6 @@ const Register = () => {
               >
                 Login
               </Link>
-              
             </p>
           </div>
         </div>

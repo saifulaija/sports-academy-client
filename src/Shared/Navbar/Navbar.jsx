@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FcSportsMode } from "react-icons/fc";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const { user } = useContext(AuthContext);
 
   const handleNav = () => {
     setNavOpen(!navOpen);
@@ -28,23 +30,45 @@ const Navbar = () => {
           Classes
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className=" font-abc font-semibold uppercase  bg-rose-500 text-white px-4 py-2 rounded-md"
-          to="/login"
-        >
-          Login
-        </NavLink>
-      </li>
+      {user ? (
+        <>
+        
+          <li>
+            <NavLink
+              className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
+              to="/login"
+            >
+             Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
+              to="/login"
+            >
+              Logout
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        <li>
+          <NavLink
+            className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
+            to="/login"
+          >
+            Login
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
   return (
-    <div className="w-full sticky top-0 z-10 bg-gray-100">
+    <div className="w-full sticky top-0 z-10 bg-indigo-200">
       <div className="max-w-[1280px] mx-auto border-b-[1px] flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-          <h1 className="text-rose-500 font-serif  font-bold uppercase tracking-wider sm:text-4xl">
+          <h1 className="text-indigo-500 font-serif  font-bold uppercase tracking-wider sm:text-4xl">
             BD Sport Academy
           </h1>
         </div>
