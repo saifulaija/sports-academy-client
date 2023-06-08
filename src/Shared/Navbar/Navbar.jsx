@@ -14,18 +14,15 @@ const Navbar = () => {
     setNavOpen(!navOpen);
   };
 
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     logOut()
-    .then(()=>{
-      toast.success('Logout successful')
-
-    })
-    .catch(err=>{
-      console.log(err);
-    })
-   
-  }
-
+      .then(() => {
+        toast.success("Logout successful");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const navItem = (
     <>
@@ -46,20 +43,22 @@ const Navbar = () => {
       </li>
       {user ? (
         <>
-        
           <li>
-            <NavLink
-              className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
-              to="/login"
-            >
-             Dashboard
+            <NavLink className="link" to="/dashboard">
+              Dashboard
             </NavLink>
           </li>
-          <li>{user.displayName}</li>
-          <li><img className="w-[30px] rounded-full" src={user?.photoURL} alt="" /></li>
+
+          <li>
+            <img
+              className="w-[30px] rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+          </li>
           <li>
             <NavLink
-            onClick={handleLogout}
+              onClick={handleLogout}
               className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
               to="/login"
             >
@@ -81,8 +80,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full sticky top-0 z-10 bg-indigo-200">
-      <div className="max-w-[1280px] mx-auto border-b-[1px] flex justify-between items-center p-8 ">
+    <div className="w-full sticky top-0 z-10 border-b-[1px] border-neutral-100 bg-white">
+      <div className="max-w-[1280px] mx-auto flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
           <h1 className="text-indigo-500 font-serif  font-bold uppercase tracking-wider sm:text-4xl">
