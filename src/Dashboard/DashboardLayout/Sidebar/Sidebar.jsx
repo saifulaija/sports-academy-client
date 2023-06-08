@@ -9,7 +9,10 @@ import { FcSportsMode } from "react-icons/fc";
 import { BsFillHouseAddFill } from "react-icons/bs";
 import { AuthContext } from '../../../Providers/AuthProvider'
 import AdminMenu from '../AdminMenu/AdminMenu';
+import InstractureMenu from '../../InstractureMenu/InstractureMenu';
+import UserMenu from '../../UserMenu/UserMenu';
 const Sidebar = () => {
+      const addmin = true
 
   const navigate = useNavigate()
 
@@ -93,7 +96,10 @@ const Sidebar = () => {
               <>
                
                 {/* Menu Links */}
-                <AdminMenu></AdminMenu>
+            {
+                  addmin &&  <AdminMenu></AdminMenu>
+            }
+               
                 <NavLink
                   to='add-room'
                   className={({ isActive }) =>

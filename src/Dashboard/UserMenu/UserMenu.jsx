@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-import { AiOutlineUserSwitch } from "react-icons/ai";
+import { AiFillFileAdd } from "react-icons/ai";
 import { SiGoogleclassroom } from "react-icons/si";
+import {FaBookOpen } from "react-icons/fa";
 import {BiHomeSmile} from "react-icons/bi";
-const AdminMenu = () => {
+const UserMenu = () => {
   return (
     <>
       <NavLink
@@ -16,7 +17,7 @@ const AdminMenu = () => {
       >
         <BiHomeSmile className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">Admin Home</span>
+        <span className="mx-4 font-medium">User Home</span>
       </NavLink>
       <NavLink
         to="my-bookings"
@@ -26,18 +27,18 @@ const AdminMenu = () => {
           }`
         }
       >
-        <AiOutlineUserSwitch className="w-6 h-6" />
+        <AiFillFileAdd className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">Manage Users</span>
+        <span className="mx-4 font-medium">My Selected Class</span>
       </NavLink>
 
       <div className="flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-gray-300   hover:text-gray-700 cursor-pointer">
-        <SiGoogleclassroom className="w-5 h-5" />
+        <FaBookOpen className="w-5 h-5" />
 
-        <span className="mx-4 font-medium">Manage Classes</span>
+        <span className="mx-4 font-medium">My Enrolled Classes</span>
       </div>
     </>
   );
 };
 
-export default AdminMenu;
+export default UserMenu;
