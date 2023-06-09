@@ -1,25 +1,28 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FeedBack = () => {
-  //    const  feedback = useLoaderData()
   const { id } = useParams();
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const feedback = event.target.feedback.value;
-    const update = {feedback}
-    fetch(`http://localhost:5000/updated/${id}`,{
-            method: 'PUT',
-            headers:{
-                  'content-type':'application/json'
-            },
-            body:JSON.stringify(update)
-      })
-      .then(res=> res.json())
-      .then(data=> console.log(data))
+    const update = { feedback };
+    fetch(`http://localhost:5000/updated/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(update),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+            toast.success('feedback send successful')
+            navigate('/dashboard/manage-classes')
 
-   
+      });
   };
 
   return (

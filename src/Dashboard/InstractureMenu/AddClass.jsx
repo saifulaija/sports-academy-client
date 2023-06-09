@@ -92,6 +92,19 @@ const AddClass = () => {
               </div>
             <div className='space-y-1 text-sm'>
                 <label htmlFor='price' className='block text-gray-600'>
+                  Enrolled Students
+                </label>
+                <input
+                  className='w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md '
+                  name='students'
+                
+                  type='number'
+                  placeholder='Available seats'
+                  required
+                />
+              </div>
+            <div className='space-y-1 text-sm'>
+                <label htmlFor='price' className='block text-gray-600'>
                   price
                 </label>
                 <input
