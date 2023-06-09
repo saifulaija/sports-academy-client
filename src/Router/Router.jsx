@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import DashboardLayout from "../Dashboard/DashboardLayout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute";
 import Users from "../Dashboard/DashboardLayout/AdminMenu/Users";
+import AddClass from "../Dashboard/InstractureMenu/AddClass";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
           {
             path:'add-users',
             element:<Users></Users>
+          },
+          {
+            path:'add-form',
+            element:<AddClass></AddClass>
           }
         ]
       }
