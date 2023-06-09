@@ -3,59 +3,61 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import loginImage from "../../../src/assets/login.jpg";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import { saveUser } from "../../api/auth";
-
+import { AiFillEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const { logIn, signInGoogle, setLoading } = useContext(AuthContext);
+  const [state, setState] = useState(false);
 
-  const navigate = useNavigate()
-  const location = useLocation()
-  const from = location.state?.from.pathname || '/'
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from.pathname || "/";
 
   const {
     register,
     handleSubmit,
-    
 
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
-   logIn(data.email, data.password)
+    logIn(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        toast.success('Login Successful')
-        navigate(from, {replace: true})
+        toast.success("Login Successful");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err.message);
       });
   };
 
-
-  
   const handleGoogleSignIn = () => {
     signInGoogle()
-       .then(result => {
-         console.log(result.user)
-         saveUser(result.user)
-         navigate(from, { replace: true })
-       })
-       .catch(err => {
-         setLoading(false)
-         console.log(err.message)
-         toast.error(err.message)
-       })
-   }
-  
+      .then((result) => {
+        console.log(result.user);
+        saveUser(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err.message);
+        toast.error(err.message);
+      });
+  };
+
+  const handleHideShow = () => {
+    setState((prevState) => !prevState);
+  };
+
   return (
-    <div className="w-full bg-cyan-300">
+    <div className="w-full bg-red-50">
       <div className="md:flex justify-center gap-16 items-center max-w-[1280px] mx-auto">
         <div className="hidden md:block">
           <img className="drop-shadow-2xl rounded-md" src={loginImage} alt="" />
@@ -87,19 +89,23 @@ const Login = () => {
                     data-temp-mail-org="0"
                   />
                 </div>
-                <div>
+                <div className="relative">
                   <div className="flex justify-between">
                     <label htmlFor="password" className="text-sm mb-2">
                       Password
                     </label>
                   </div>
                   <input
-                    type="password"
+                    type={state? 'text' : 'password'}
                     {...register("password")}
                     placeholder="Enter Your Email Here"
                     className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
+                  <AiFillEyeInvisible
+                    onClick={handleHideShow}
+                    className=" ml-80 top-[46px] absolute"
+                  ></AiFillEyeInvisible>
                 </div>
               </div>
 
@@ -120,16 +126,19 @@ const Login = () => {
               </p>
               <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
             </div>
-            <div onClick={handleGoogleSignIn} className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
+            <div
+              onClick={handleGoogleSignIn}
+              className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
+            >
               <FcGoogle size={32} />
 
-              <p>Continue with Google</p>
+              <p>  Google</p>
             </div>
             <p className="px-6 text-sm text-center text-gray-400">
               Don't have an account yet?
               <Link
                 to="/register"
-                className="hover:underline hover:text-rose-500 text-gray-600"
+                className="hover:underline hover:text-blue-500 text-gray-600"
               >
                 Sign up
               </Link>
