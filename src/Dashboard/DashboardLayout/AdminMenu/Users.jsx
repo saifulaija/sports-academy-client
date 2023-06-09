@@ -80,7 +80,7 @@ const Users = () => {
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td ><button  onClick={()=>handleMakeInstructor(item)} disabled={!disable} className="btn-primary">Make Instructor</button></td>
-                <td><button onClick={()=> handleMakeAdmin(item)} disabled={!disable} className="btn-primary">Make Admin</button></td>
+                <td><button onClick={()=> handleMakeAdmin(item)} disabled={user.role === 'admin'} className="btn-primary">Make Admin</button></td>
               </tr> )}
              
              

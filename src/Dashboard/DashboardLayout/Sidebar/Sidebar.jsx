@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   const navigate = useNavigate()
 
-  const { user, logOut } = useContext(AuthContext)
+  const { user, logOut, role } = useContext(AuthContext)
 
   const [isActive, setActive] = useState('false')
   
@@ -97,7 +97,7 @@ const Sidebar = () => {
                
                 {/* Menu Links */}
             {
-                  addmin &&  <AdminMenu></AdminMenu>
+                 role && role === 'admin'? <AdminMenu></AdminMenu>: role && role === 'instructor'?  <InstractureMenu></InstractureMenu> : <UserMenu></UserMenu>
             }
                
                 <NavLink
