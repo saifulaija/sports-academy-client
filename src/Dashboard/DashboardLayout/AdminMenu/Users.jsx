@@ -68,7 +68,7 @@ const Users = () => {
                   <td>
                     <button
                       onClick={() => handleMakeInstructor(item)}
-                      disabled={!disable}
+                      disabled={item.role == 'instructor'}
                       className="btn-primary"
                     >
                       Make Instructor
@@ -77,7 +77,7 @@ const Users = () => {
                   <td>
                     <button
                       onClick={() => handleMakeAdmin(item)}
-                      disabled={user.role === "admin"}
+                      disabled={item.role === "admin"}
                       className="btn-primary"
                     >
                       Make Admin
