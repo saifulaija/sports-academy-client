@@ -8,6 +8,7 @@ import DashboardLayout from "../Dashboard/DashboardLayout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute";
 import Users from "../Dashboard/DashboardLayout/AdminMenu/Users";
 import AddClass from "../Dashboard/InstractureMenu/AddClass";
+import ManageClasses from "../Dashboard/DashboardLayout/AdminMenu/ManageClasses";
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
           {
             path:'add-form',
             element:<AddClass></AddClass>
+          },
+          {
+            path:'manage-classes',
+            element:<ManageClasses></ManageClasses>
           }
         ]
       }

@@ -18,4 +18,8 @@
       .btn-primary{
             @apply bg-[#367379] px-4 py-1 rounded-md text-white font-semibold hover:bg-[#88d7de] transition
       }
+
+      .btn-class{
+            @apply bg-[#384d54] px-2 text-white rounded-full hover:bg-opacity-75 transition 
+      }
     
