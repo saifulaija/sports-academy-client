@@ -34,6 +34,7 @@ const Register = () => {
       updateUserProfile(data.name, data.photoURL)
       .then(()=>{
         saveUser(result.user)
+        toast.success('Create User Successful')
        navigate('/login')
       })
       .catch(err=>{

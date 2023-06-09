@@ -16,5 +16,6 @@
             @apply bg-[#88aca1]
       }
       .btn-primary{
-            @apply bg-[#88d7de] px-4 py-1 rounded-md text-white font-semibold hover:bg-[#367379] transition
+            @apply bg-[#367379] px-4 py-1 rounded-md text-white font-semibold hover:bg-[#88d7de] transition
       }
+    
