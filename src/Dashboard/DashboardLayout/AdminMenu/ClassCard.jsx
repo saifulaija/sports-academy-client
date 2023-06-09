@@ -1,4 +1,4 @@
-const ClassCard = ({ item }) => {
+const ClassCard = ({ item, handleApproved }) => {
   const { photo, name, price, seats, status  } = item;
   return (
     <div className=" font-mono group border-[1px] max-h-[550px] overflow-hidden border-yellow-400 border-dashed relative  rounded-md space-y-4">
@@ -20,8 +20,8 @@ const ClassCard = ({ item }) => {
      </div>
 
      <div className="flex  bottom-0 gap-2 items-center justify-center">
-            <button className="btn-class">Approve</button>
-            <button className="btn-class">Deny</button>
+            <button onClick={()=>handleApproved(item._id)} className="btn-class">Approve</button>
+            <button disabled={status == 'approved'} className="btn-class">Deny</button>
             <button className="btn-class">Feedback</button>
      </div>
 

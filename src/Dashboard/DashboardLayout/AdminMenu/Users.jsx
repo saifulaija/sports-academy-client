@@ -14,7 +14,7 @@ const Users = () => {
   });
 
   const handleMakeAdmin = (item) => {
-    console.log(item);
+    
     fetch(`http://localhost:5000/admin/${item._id}`, {
       method: "PATCH",
     })

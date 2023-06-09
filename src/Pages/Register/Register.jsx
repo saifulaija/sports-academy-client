@@ -8,62 +8,56 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import { saveUser } from "../../api/auth";
 
-
 const Register = () => {
-  const navigate = useNavigate()
-  const {createUser, updateUserProfile, signInGoogle, setLoading} = useContext(AuthContext)
-  
-  const location = useLocation()
-  const from = location.state?.from?.pathname || '/'
+  const navigate = useNavigate();
+  const { createUser, updateUserProfile, signInGoogle, setLoading } =
+    useContext(AuthContext);
 
-  
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
     handleSubmit,
-   
 
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
-    createUser(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
-      updateUserProfile(data.name, data.photoURL)
-      .then(()=>{
-        saveUser(result.user)
-        toast.success('Create User Successful')
-       navigate('/login')
+    createUser(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            saveUser(result.user);
+            toast.success("Create User Successful");
+            navigate("/login");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
-      .catch(err=>{
+      .catch((err) => {
         console.log(err);
-      })
-     
-    })
-    .catch(err=>{
-      console.log(err);
-    })
+      });
   };
 
-
-  
   const handleGoogleSignIn = () => {
-   signInGoogle()
-      .then(result => {
-        saveUser(result.user)
-        console.log(result.user)
-        navigate(from, { replace: true })
-      })
-      .catch(err => {
-        setLoading(false)
-        console.log(err.message)
-        toast.error(err.message)
-      })
-  }
+    signInGoogle()
+      .then((result) => {
+        toast("Login Successful!");
+        saveUser(result.user);
 
-
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err.message);
+        toast.error(err.message);
+      });
+  };
 
   return (
     <div className="w-full bg-neutral-300">
@@ -122,31 +116,27 @@ const Register = () => {
                     {...register("password", {
                       required: true,
                       minLength: 6,
-                      pattern:/^(?=.*[A-Z])(?=.*[!@#$&*])/ 
+                      pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])/,
 
                       //  TODO Validati0n
                     })}
                     placeholder="password"
                     // className="input input-bordered"
                   />
-                  
-                  {errors.password?.type === 'required' && 
-                    <p className="text-red-600">
-                      Password is required
-                    </p>
-                  }
-                  {errors.password?.type === 'minLength' && 
+
+                  {errors.password?.type === "required" && (
+                    <p className="text-red-600">Password is required</p>
+                  )}
+                  {errors.password?.type === "minLength" && (
                     <p className="text-red-600">
                       Password is at lest 6 character
                     </p>
-                  }
-                  {errors.password?.type === 'pattern' && 
+                  )}
+                  {errors.password?.type === "pattern" && (
                     <p className="text-red-600">
                       Password is must one uppercase & one special character
                     </p>
-                  }
-                 
-                  
+                  )}
                 </div>
                 <div>
                   <div className="flex justify-between">
@@ -193,10 +183,13 @@ const Register = () => {
               </p>
               <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
             </div>
-            <div onClick={handleGoogleSignIn} className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
+            <div
+              onClick={handleGoogleSignIn}
+              className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
+            >
               <FcGoogle size={32} />
 
-              <p>Continue with Google</p>
+              <p>Google</p>
             </div>
             <p className="px-6 text-sm text-center text-gray-400">
               Already have an account yet?{" "}

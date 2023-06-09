@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 
 import { app } from "../firebase/firebase.config";
-import { getRole } from "../api/auth";
+import { getRole, getStatus } from "../api/auth";
 // import { getRole } from "../api/auth";
 
 export const AuthContext = createContext();
@@ -21,6 +21,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [role, setRole] = useState(null);
+ 
   const googleProvider = new GoogleAuthProvider();
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const AuthProvider = ({ children }) => {
       getRole(user.email).then((data) => setRole(data));
     }
   }, [user]);
+
 
   const createUser = (email, password) => {
     setLoading(true);
