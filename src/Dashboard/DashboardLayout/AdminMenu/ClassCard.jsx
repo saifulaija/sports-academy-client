@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ClassCard = ({ item, handleApproved, handleDeny }) => {
   const { photo, name, price, seats, status  } = item;
   return (
@@ -22,7 +24,7 @@ const ClassCard = ({ item, handleApproved, handleDeny }) => {
      <div className="flex  bottom-0 gap-2 items-center justify-center">
             <button disabled={status ==='approved' || status === 'deny'} onClick={()=>handleApproved(item._id)} className="btn-class">Approved</button>
             <button disabled={status == 'approved' || status === 'deny'} className="btn-class" onClick={()=>handleDeny(item._id)}>Deny</button>
-            <button className="btn-class">Feedback</button>
+            <Link to={`/dashboard/feedback/${item._id}`}><button className="btn-class">Feedback</button></Link>
      </div>
 
     

@@ -8,7 +8,7 @@ const ManageClasses = () => {
     return res.json();
   });
   console.log(classes);
-
+// TODO Modal created for send feedback
     const handleApproved=id=>{
       console.log(id);
       fetch(`http://localhost:5000/approved/${id}`,{

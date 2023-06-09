@@ -10,6 +10,7 @@ import Users from "../Dashboard/DashboardLayout/AdminMenu/Users";
 import AddClass from "../Dashboard/InstractureMenu/AddClass";
 import ManageClasses from "../Dashboard/DashboardLayout/AdminMenu/ManageClasses";
 import Instructor from "../Pages/Instructor/Instructor";
+import FeedBack from "../components/FeedBack/FeedBack";
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
           {
             path:'manage-classes',
             element:<ManageClasses></ManageClasses>
+          },
+          {
+            path:'feedback/:id',
+            element:<FeedBack></FeedBack>,
+            loader: ({params}) => fetch(`http://localhost:5000/feedback/${params.id}`)
           }
         ]
       }
