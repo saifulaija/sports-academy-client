@@ -13,59 +13,44 @@ const Instructor = () => {
   }, []);
 
   return (
-    <div  className=" mx-auto p-16 bg-red-50">
+    <div className=" mx-auto p-16 bg-red-50">
       <h1 className="text-3xl font-bold uppercase text-center py-6">
         Total instructors:{instructors.length}
       </h1>
 
-      <div className="" >
+      <div className="">
         <div className="overflow-x-auto max-w-[1040px] font-mono  mx-auto ">
           <table className="table">
             {/* head */}
             <thead>
               <tr>
-                <th>
-                #
-                </th>
+                <th>#</th>
                 <th>Photo</th>
                 <th> Name</th>
                 <th>Email</th>
-               
               </tr>
             </thead>
             <tbody>
-              {instructors.map((item,index)=>  <tr key={item._id}>
-                <th>
-                 {index + 1}
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={item.image}
-                          alt="Avatar Tailwind CSS Component"
-                        />
+              {instructors.map((item, index) => (
+                <tr key={item._id}>
+                  <th>{index + 1}</th>
+                  <td>
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img
+                            src={item.image}
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        </div>
                       </div>
                     </div>
-                  
-                  </div>
-                </td>
-                <td>
-                  {item.name}
-                </td>
-                <td>{item.email}</td>
-               
-              </tr> )}
-             
-             
-            
-             
-             
-              
-             
+                  </td>
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
+                </tr>
+              ))}
             </tbody>
-           
           </table>
         </div>
       </div>

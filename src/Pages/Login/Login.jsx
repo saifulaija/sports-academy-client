@@ -96,7 +96,7 @@ const Login = () => {
                     </label>
                   </div>
                   <input
-                    type={state? 'text' : 'password'}
+                    type={state ? "text" : "password"}
                     {...register("password")}
                     placeholder="Enter Your Email Here"
                     className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
@@ -132,7 +132,7 @@ const Login = () => {
             >
               <FcGoogle size={32} />
 
-              <p>  Google</p>
+              <p> Google</p>
             </div>
             <p className="px-6 text-sm text-center text-gray-400">
               Don't have an account yet?
