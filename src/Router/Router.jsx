@@ -13,6 +13,7 @@ import Instructor from "../Pages/Instructor/Instructor";
 import FeedBack from "../components/FeedBack/FeedBack";
 import MyClass from "../Dashboard/InstractureMenu/MyClass";
 import UpdateClass from "../Dashboard/InstractureMenu/UpdateClass";
+import AllClasses from "../Pages/AllClasses/AllClasses";
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
               path:'teacher',
               element:<Instructor></Instructor>
+            },
+            {
+              path:'all-classes',
+              element:<AllClasses></AllClasses>
             }
            
         ]    

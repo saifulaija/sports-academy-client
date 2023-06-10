@@ -37,7 +37,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="link" to="/allToys">
+        <NavLink className="link" to="/all-classes">
           Classes
         </NavLink>
       </li>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
           <li>
             <img
-              className="w-[30px] rounded-full"
+              className="w-[40px] h-[40px] rounded-full"
               src={user?.photoURL}
               alt=""
             />

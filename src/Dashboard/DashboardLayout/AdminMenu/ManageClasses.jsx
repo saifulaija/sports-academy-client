@@ -3,6 +3,8 @@ import ClassCard from "./ClassCard";
 import { toast } from "react-hot-toast";
 
 const ManageClasses = () => {
+
+  
   const { data: classes = [], refetch } = useQuery(["classes"], async () => {
     const res = await fetch("http://localhost:5000/classes");
     return res.json();

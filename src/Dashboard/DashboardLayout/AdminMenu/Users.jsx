@@ -52,11 +52,12 @@ const Users = () => {
             {/* head */}
             <thead>
               <tr>
-                <th></th>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Role</th>
+                <th>Action</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -65,6 +66,7 @@ const Users = () => {
                   <th>{index + 1}</th>
                   <td>{item.name}</td>
                   <td>{item.email}</td>
+                  <td>{item.role? item.role : 'student'}</td>
                   <td>
                     <button
                       onClick={() => handleMakeInstructor(item)}
