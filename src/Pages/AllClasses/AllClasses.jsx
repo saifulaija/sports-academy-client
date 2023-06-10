@@ -1,15 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import NewClassCard from "./NewClassCard";
+import { useEffect, useState } from "react";
 
 
 const AllClasses = () => {
 
-      const { data: allClass = [], refetch } = useQuery(["allClass"], async () => {
-            const res = await fetch("http://localhost:5000/all-classes");
-            return res.json();
-          });
-          console.log(allClass);
-
+       const [allClass, setAllClass] = useState([])
+       useEffect(()=>{
+            fetch('http://localhost:5000/all-classes')
+            .then(res=>res.json())
+            .then(data=>setAllClass(data))
+       },[])
 
 
 
