@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Heading from "../../Shared/Heading/Heading";
+import Fade from 'react-reveal/Fade';
 
 const PopularInstructor = () => {
   const [instructors, setInstructors] = useState([]);
@@ -28,7 +29,8 @@ const PopularInstructor = () => {
           <div className="overflow-x-auto w-full font-mono mx-auto ">
             <table className="table">
               {/* head */}
-              <thead>
+             <Fade top>
+             <thead>
                 <tr>
                   <th>#</th>
                   <th>Photo</th>
@@ -36,7 +38,9 @@ const PopularInstructor = () => {
                   <th>Email</th>
                 </tr>
               </thead>
-              <tbody>
+             </Fade>
+             <Fade bottom>
+             <tbody>
                 {instructors.map((item, index) => (
                   <tr key={item._id}>
                     <th>{index + 1}</th>
@@ -57,6 +61,7 @@ const PopularInstructor = () => {
                   </tr>
                 ))}
               </tbody>
+             </Fade>
             </table>
           </div>
         </div>

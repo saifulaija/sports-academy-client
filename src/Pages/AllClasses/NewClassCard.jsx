@@ -4,31 +4,20 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import Loader from "../../components/Loader/Loader";
+import { Zoom} from "react-reveal";
 
 const NewClassCard = ({ item }) => {
   const { photo, name, seats, price, _id } = item;
-  const { role, user } = useContext(AuthContext);
+  const { role, user, loading } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const selectButton = (item) => {
-    console.log(item);
-    if (!user) {
-      Swal.fire({
-        title: "To select first Login Now",
-
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Login Now!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/login", { state: { from: location } });
-        }
-      });
-    } else {
+   
+     
+     if(user && user?.email) {
       const orderClass = {
         name,
         photo,
@@ -53,10 +42,31 @@ const NewClassCard = ({ item }) => {
           }
         });
     }
+    else{
+      Swal.fire({
+            title: "To select first Login Now",
+    
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Login Now!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate("/login", { state: { from: location } });
+            }
+          });
+    }
   };
 
+  if(loading){
+      return <Loader></Loader>
+  }
+
+
   return (
-    <div
+   <Zoom>
+       <div
       className={`border-[1px] border-neutral-200 shadow-lg  font-mono text-neutral-600 space-y-4 rounded-md group ${
         seats <= 0 ? "bg-red-400" : ""
       }`}
@@ -84,6 +94,7 @@ const NewClassCard = ({ item }) => {
         </button>
       </div>
     </div>
+   </Zoom>
   );
 };
 

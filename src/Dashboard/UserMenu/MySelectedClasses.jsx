@@ -5,6 +5,7 @@ import Loader from "../../components/Loader/Loader";
 import { TiDocumentDelete } from "react-icons/ti";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { toast } from "react-hot-toast";
+// TODO pay button have to implemented
 
 const MySelectedClasses = () => {
   const { user } = useContext(AuthContext);
