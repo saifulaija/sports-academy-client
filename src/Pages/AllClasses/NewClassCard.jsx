@@ -34,6 +34,7 @@ const NewClassCard = ({ item }) => {
         photo,
         classId: _id,
         price,
+        seats,
         email: user.email,
       };
       console.log(orderClass);
