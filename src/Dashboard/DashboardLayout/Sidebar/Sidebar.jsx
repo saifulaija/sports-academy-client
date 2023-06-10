@@ -12,7 +12,7 @@ import AdminMenu from '../AdminMenu/AdminMenu';
 import InstractureMenu from '../../InstractureMenu/InstractureMenu';
 import UserMenu from '../../UserMenu/UserMenu';
 const Sidebar = () => {
-      const addmin = true
+      
 
   const navigate = useNavigate()
 

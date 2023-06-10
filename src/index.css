@@ -6,7 +6,7 @@
 
 
       .link{
-            @apply text-[15px] font-semibold font-abc text-gray-600 uppercase
+            @apply text-[15px] font-mono font-semibold font-abc text-gray-600 uppercase
       }
      
       .primary{

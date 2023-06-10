@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import { AiFillFileAdd } from "react-icons/ai";
-import { SiGoogleclassroom } from "react-icons/si";
+
 import {BiHomeSmile} from "react-icons/bi";
 const InstractureMenu = () => {
   return (

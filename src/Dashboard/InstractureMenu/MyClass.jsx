@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const MyClass = () => {
   const { user } = useContext(AuthContext);
@@ -43,7 +44,7 @@ const MyClass = () => {
                 <td>{item.students}</td>
                 <td>{item.feedback}</td>
                 <td>
-                  <button className="btn-class">Update</button>
+                  <Link to={`/dashboard/update-class/${item._id}`}><button  className="btn-class">Update</button></Link>
                 </td>
               </tr>
             ))}
