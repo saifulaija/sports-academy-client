@@ -5,6 +5,7 @@ import Loader from "../../components/Loader/Loader";
 import { TiDocumentDelete } from "react-icons/ti";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 // TODO pay button have to implemented
 
 const MySelectedClasses = () => {
@@ -73,11 +74,11 @@ const MySelectedClasses = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="btn-third">
+                 <Link to={`/dashboard/payment/${item._id}`}> <button className="btn-third">
                     {" "}
                     <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
                     Pay
-                  </button>
+                  </button></Link>
                 </td>
               </tr>
             ))}

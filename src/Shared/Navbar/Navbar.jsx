@@ -69,7 +69,7 @@ const Navbar = () => {
       ) : (
         <li>
           <NavLink
-            className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
+            className=" font-abc text-[14px] font-semibold uppercase  bg-[#517463] text-white px-4 py-2 rounded-full"
             to="/login"
           >
             Login
@@ -84,7 +84,7 @@ const Navbar = () => {
       <div className="max-w-[1280px] mx-auto flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-          <h1 className="text-indigo-500  font-mono  font-bold uppercase tracking-wider sm:text-4xl">
+          <h1 className="text-[#617453] font-mono  font-bold uppercase sm:text-4xl">
             BD Sport Academy
           </h1>
         </div>

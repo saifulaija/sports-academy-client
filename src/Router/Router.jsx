@@ -15,6 +15,7 @@ import MyClass from "../Dashboard/InstractureMenu/MyClass";
 import UpdateClass from "../Dashboard/InstractureMenu/UpdateClass";
 import AllClasses from "../Pages/AllClasses/AllClasses";
 import MySelectedClasses from "../Dashboard/UserMenu/MySelectedClasses";
+import Payment from "../Pages/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
           {
             path:'my-bookings',
             element:<MySelectedClasses></MySelectedClasses>
+          },
+          {
+            path:'payment/:id',
+            element: <Payment></Payment>,
+            loader:({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
           }
         ]
       }

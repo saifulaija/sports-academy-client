@@ -46,27 +46,19 @@ const AboutUs = () => {
            </Fade>
            <Fade bottom>
            <div>
-              <h3 className="text-2xl uppercase font-bold text-neutral-900">Our Mission</h3>
+              <h3 className="text-2xl uppercase font-bold text-neutral-900">Our Vision</h3>
               <p className="text-justify" >
-                The Summer Academy mission typically refers to a program or
-                educational initiative conducted during the summer months. While
-                the specific mission can vary depending on the organization or
-                institution hosting the Summer Academy, the general objective is
-                to provide a unique learning experience for participants, often
-                focusing on specific subjects or skill development.
+              Our vision is to create an inspiring and transformative Summer Academy that empowers students to explore their passions, expand their knowledge, and develop the skills needed for future success. We envision a dynamic learning environment where participants engage in innovative and hands-on experiences, fostering curiosity, critical thinking, and creativity. Through collaboration, mentorship, and experiential learning, our Summer Academy aims to nurture well-rounded individuals who embrace lifelong learning, excel academically, and make positive contributions to their communities. We aspire to be a catalyst for personal
               </p>
             </div>
            </Fade>
             <Fade bottom>
             <div>
-              <h3 className="text-2xl uppercase font-bold text-neutral-900">Our Mission</h3>
+              <h3 className="text-2xl uppercase font-bold text-neutral-900">Our Principles</h3>
               <p className="text-justify">
-                The Summer Academy mission typically refers to a program or
-                educational initiative conducted during the summer months. While
-                the specific mission can vary depending on the organization or
-                institution hosting the Summer Academy, the general objective is
-                to provide a unique learning experience for participants, often
-                focusing on specific subjects or skill development.
+              As a principal of a Summer Academy, your role is crucial in ensuring the successful implementation of the program and overseeing its overall operations. Here are some key responsibilities and tasks that principals typically have:
+
+
               </p>
             </div>
             </Fade>
