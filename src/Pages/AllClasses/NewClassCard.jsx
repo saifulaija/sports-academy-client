@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 const NewClassCard = ({ item }) => {
   const { photo, name, seats, price, _id } = item;
   const { role, user } = useContext(AuthContext);
-  
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -25,31 +25,34 @@ const NewClassCard = ({ item }) => {
         confirmButtonText: "Yes, Login Now!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login", {state: {from: location}});
-         
+          navigate("/login", { state: { from: location } });
         }
       });
     } else {
-
-      const orderClass = {name, photo, classId: _id, price, email: user.email}
+      const orderClass = {
+        name,
+        photo,
+        classId: _id,
+        price,
+        email: user.email,
+      };
       console.log(orderClass);
-      fetch('http://localhost:5000/bookings',{
-            method:'POST',
-            headers:{
-                  'content-type':'application/json'
-            },
-            body:JSON.stringify(orderClass)
+      fetch("http://localhost:5000/bookings", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(orderClass),
       })
-      .then(res=>res.json())
-      .then(data=>{
-            if(data.insertedId){
-                  toast.success('Class Successfully Selected')
-                  console.log(data);
-            }
-      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            toast.success("Class Successfully Selected");
+            console.log(data);
+          }
+        });
     }
   };
-
 
   return (
     <div
@@ -72,7 +75,7 @@ const NewClassCard = ({ item }) => {
       </div>
       <div className="text-center py-4">
         <button
-          onClick={()=> selectButton(item)}
+          onClick={() => selectButton(item)}
           disabled={seats <= 0 || role === "admin" || role === "instructor"}
           className="btn-third "
         >
