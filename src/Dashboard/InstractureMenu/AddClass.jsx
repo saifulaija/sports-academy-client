@@ -12,7 +12,7 @@ const AddClass = () => {
     const name = event.target.name.value;
     const photo = event.target.photo.value;
     const price = event.target.price.value;
-    const seats = event.target.seats.value;
+    const seats = parseFloat(event.target.seats.value);
     const students = parseFloat(event.target.students.value);
 
     const status = "pending";
