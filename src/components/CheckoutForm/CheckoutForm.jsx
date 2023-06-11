@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({paymentData}) => {
   const stripe = useStripe();
@@ -12,6 +14,7 @@ const CheckoutForm = ({paymentData}) => {
   const [cardError, setCardError] = useState("");
   const { user } = useContext(AuthContext);
   const [clientSecret, setClientSecret] = useState('')
+  const navigate = useNavigate()
 
 
    useEffect(()=>{
@@ -78,7 +81,42 @@ const CheckoutForm = ({paymentData}) => {
         console.log("[error]", confirmError);
         setCardError(confirmError.message);
       } else {
-        console.log("[PaymentMethod]", paymentMethod);
+        console.log("[paymentIntent]", paymentMethod);
+        if(paymentIntent.status === 'succeeded'){
+          // save payment info in db
+          const paymentInfo = {
+            ...paymentData,
+            transactionId: paymentIntent.id,
+            date: new Date()
+          }
+          fetch('http://localhost:5000/payment',{
+            method:'POST',
+            headers:{
+              'content-type': 'application/json'
+            },
+            body:JSON.stringify(paymentInfo)
+          })
+          .then(res=> res.json())
+          .then(data=>{
+            if(data.insertedId){
+              // update booking status
+            fetch(`http://localhost:5000/payment/${paymentData._id}`,{
+              method:'PATCH'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+              console.log(data);
+            })
+            // update students and seats
+            toast.success('Payment successful!!',paymentIntent.id)
+            navigate('/dashboard/my-bookings')
+
+
+
+            }
+          })
+        }
+
       }
 
 

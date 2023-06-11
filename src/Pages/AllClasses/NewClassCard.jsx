@@ -25,7 +25,9 @@ const NewClassCard = ({ item }) => {
         price,
         seats,
         email: user.email,
+        payment:'pending'
       };
+      
       console.log(orderClass);
       fetch("http://localhost:5000/bookings", {
         method: "POST",
