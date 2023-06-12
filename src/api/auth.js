@@ -38,3 +38,14 @@ export const saveUser = user=>{
 
 
 
+
+export const updateData =(id)=>{
+      fetch(`http://localhost:5000/updated-two/${id}`,{
+            method:'PATCH'
+      })
+      .then(res=>res.json())
+      .then(data=>{
+            console.log(data);
+      })
+}
+

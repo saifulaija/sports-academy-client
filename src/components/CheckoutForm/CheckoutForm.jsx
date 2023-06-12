@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { updateData } from "../../api/auth";
 
 const CheckoutForm = ({ paymentData }) => {
   const stripe = useStripe();
@@ -110,6 +111,7 @@ const CheckoutForm = ({ paymentData }) => {
               navigate("/dashboard/my-bookings");
 
               // TODO update students and seats
+              updateData(paymentData?.classId)
             }
           });
       }
