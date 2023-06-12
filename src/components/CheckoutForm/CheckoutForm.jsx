@@ -8,29 +8,27 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const CheckoutForm = ({paymentData}) => {
+const CheckoutForm = ({ paymentData }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const { user } = useContext(AuthContext);
-  const [clientSecret, setClientSecret] = useState('')
-  const navigate = useNavigate()
+  const [clientSecret, setClientSecret] = useState("");
+  const navigate = useNavigate();
+  console.log(paymentData);
 
-
-   useEffect(()=>{
-   if(paymentData?.price){
-    axios.post('http://localhost:5000/create-payment-intent',{price: paymentData?.price}).then(res=>{
-      console.log(res.data.clientSecret)
-      setClientSecret(res.data.clientSecret)
-    })
-   }
-   
-
-
-   
-   },[paymentData])
-
-
+  useEffect(() => {
+    if (paymentData?.price) {
+      axios
+        .post("http://localhost:5000/create-payment-intent", {
+          price: paymentData?.price,
+        })
+        .then((res) => {
+          console.log(res.data.clientSecret);
+          setClientSecret(res.data.clientSecret);
+        });
+    }
+  }, [paymentData]);
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -77,50 +75,45 @@ const CheckoutForm = ({paymentData}) => {
         },
       });
 
-      if (confirmError) {
-        console.log("[error]", confirmError);
-        setCardError(confirmError.message);
-      } else {
-        console.log("[paymentIntent]", paymentMethod);
-        if(paymentIntent.status === 'succeeded'){
-          // save payment info in db
-          const paymentInfo = {
-            ...paymentData,
-            transactionId: paymentIntent.id,
-            date: new Date()
-          }
-          fetch('http://localhost:5000/payment',{
-            method:'POST',
-            headers:{
-              'content-type': 'application/json'
-            },
-            body:JSON.stringify(paymentInfo)
-          })
-          .then(res=> res.json())
-          .then(data=>{
-            if(data.insertedId){
+    if (confirmError) {
+      console.log("[error]", confirmError);
+      setCardError(confirmError.message);
+    } else {
+      console.log("[paymentIntent]", paymentMethod);
+      if (paymentIntent.status === "succeeded") {
+        // save payment info in db
+        const paymentInfo = {
+          ...paymentData,
+          transactionId: paymentIntent.id,
+          date: new Date(),
+        };
+        fetch("http://localhost:5000/payment", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(paymentInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
               // update booking status
-            fetch(`http://localhost:5000/payment/${paymentData._id}`,{
-              method:'PATCH'
-            })
-            .then(res=>res.json())
-            .then(data=>{
-              console.log(data);
-            })
-            // update students and seats
-            toast.success('Payment successful!!',paymentIntent.id)
-            navigate('/dashboard/my-bookings')
+              fetch(`http://localhost:5000/payment/${paymentData._id}`, {
+                method: "PATCH",
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                });
+              // update students and seats
+              toast.success("Payment successful!!", paymentIntent.id);
+              navigate("/dashboard/my-bookings");
 
-
-
+              // TODO update students and seats
             }
-          })
-        }
-
+          });
       }
-
-
-
+    }
   };
 
   return (

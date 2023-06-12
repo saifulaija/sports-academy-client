@@ -6,10 +6,13 @@ import { TiDocumentDelete } from "react-icons/ti";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 // TODO pay button have to implemented
 
 const MySelectedClasses = () => {
   const { user } = useContext(AuthContext);
+  const [bookingClasses, setBookingClasses] = useState([]);
 
   const {
     isLoading,
@@ -22,6 +25,12 @@ const MySelectedClasses = () => {
       return res.json();
     },
   });
+
+  
+    // const remaining = booking.filter((item) => (item.payment = "pending"));
+    // setBookingClasses(remaining);
+   
+  
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/bookings/${id}`, {
@@ -74,11 +83,14 @@ const MySelectedClasses = () => {
                   </button>
                 </td>
                 <td>
-                 <Link to={`/dashboard/payment/${item._id}`}> <button className="btn-third">
+                  <Link to={`/dashboard/payment/${item._id}`}>
                     {" "}
-                    <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
-                    Pay
-                  </button></Link>
+                    <button className="btn-third">
+                      {" "}
+                      <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
+                      Pay
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}
@@ -90,4 +102,3 @@ const MySelectedClasses = () => {
 };
 
 export default MySelectedClasses;
-
