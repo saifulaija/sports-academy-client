@@ -1,15 +1,17 @@
 import AboutUs from "../../components/AboutUs/AboutUs";
-import Banner from "../../components/Banner/Banner";
+
 import PopularClasses from "../../components/PopularClasses/PopularClasses";
 import PopularInstructor from "../../components/PopularInstructor/PopularInstructor";
+import NewBanner from "../NewBanner/NewBanner";
 
 
 const Home = () => {
       return (
             <div>
-                <Banner></Banner>
+                <NewBanner></NewBanner>
                 <PopularClasses></PopularClasses>
                 <PopularInstructor></PopularInstructor>
+                
                 <AboutUs></AboutUs>
             </div>
       );

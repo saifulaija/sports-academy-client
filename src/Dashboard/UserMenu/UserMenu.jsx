@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 import { AiFillFileAdd } from "react-icons/ai";
-import { SiGoogleclassroom } from "react-icons/si";
-import {FaBookOpen } from "react-icons/fa";
-import {BiHomeSmile} from "react-icons/bi";
+
+import { BiHomeSmile } from "react-icons/bi";
 const UserMenu = () => {
   return (
     <>
@@ -55,8 +54,6 @@ const UserMenu = () => {
 
         <span className="mx-4 font-medium">Payment History</span>
       </NavLink>
-
-     
     </>
   );
 };

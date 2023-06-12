@@ -6,7 +6,7 @@
 
 
       .link{
-            @apply text-[15px] font-mono font-semibold font-abc text-gray-600 uppercase
+            @apply text-[15px] font-mono font-semibold  text-white uppercase
       }
      
       .primary{
@@ -26,6 +26,6 @@
             @apply text-xl md:text-3xl font-bold font-mono text-yellow-500  uppercase text-center p-8 drop-shadow-xl
       }
       .btn-third{
-            @apply bg-[#3c4257] px-8 hover:bg-opacity-60 transition py-1 text-white font-bold rounded-lg
+            @apply bg-[#617453] px-8 hover:bg-opacity-60 transition py-2 text-white font-bold rounded-lg
       }
     

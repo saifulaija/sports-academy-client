@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Loader from "../../components/Loader/Loader";
 import { useEffect } from "react";
+import Fade from "react-reveal/Fade";
 
 const MyPaymentHistory = () => {
   const { user, loading } = useContext(AuthContext);
@@ -22,13 +23,14 @@ useEffect(()=>{
   }
 
   return (
-    <div className="w-full p-10">
-      <h3 className="text-3xl font-mono font-bold uppercase text-center text-yellow-400">
+    <div className="w-full p-10 border-[1px]">
+      <h3 className="heading-st">
         Total Payment Classes : {paymentClasses.length}
       </h3>
       <div className="font-mono">
         <div className="overflow-x-auto">
-          <table className="table">
+         <Fade bottom>
+         <table className="table">
             {/* head */}
             <thead>
               <tr>
@@ -50,6 +52,7 @@ useEffect(()=>{
              
             </tbody>
           </table>
+         </Fade>
         </div>
       </div>
     </div>

@@ -59,7 +59,7 @@ const Navbar = () => {
           <li>
             <NavLink
               onClick={handleLogout}
-              className=" font-abc text-[14px] font-semibold uppercase  bg-indigo-500 text-white px-4 py-2 rounded-full"
+              className=" font-abc text-[14px] font-semibold uppercase  bg-yellow-500 text-white px-4 py-2 rounded-full"
               to="/login"
             >
               Logout
@@ -69,7 +69,7 @@ const Navbar = () => {
       ) : (
         <li>
           <NavLink
-            className=" font-abc text-[14px] font-semibold uppercase  bg-[#517463] text-white px-4 py-2 rounded-full"
+            className=" font-abc text-[14px] font-semibold uppercase  bg-yellow-500 text-white px-4 py-2 rounded-full"
             to="/login"
           >
             Login
@@ -80,16 +80,16 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full sticky top-0 z-10 border-b-[1px] border-neutral-100 bg-white">
+    <div className="w-full sticky top-0 z-10 border-b-[1px] border-neutral-100 bg-[#617453]">
       <div className="max-w-[1280px] mx-auto flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-          <h1 className="text-[#617453] font-mono  font-bold uppercase sm:text-4xl">
-            BD Sport Academy
+          <h1 className="text-yellow-500 font-mono  font-bold  sm:text-4xl">
+             Sport Academy
           </h1>
         </div>
 
-        <ul className=" hidden md:flex space-x-4">{navItem}</ul>
+        <ul className=" hidden md:block md:flex space-x-4">{navItem}</ul>
 
         <div onClick={handleNav} className="block md:hidden">
           {navOpen ? (
@@ -102,12 +102,12 @@ const Navbar = () => {
         <ul
           className={
             navOpen
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-blue-100] ease-in-out duration-500"
+              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#617453] ease-in-out duration-500"
               : "ease-in-out duration-500 fixed left-[-100%]"
           }
         >
           <h1 className="text-yellow-700  font-bold uppercase tracking-wider text-xl">
-            Toys Zone
+            Sports Academy
           </h1>
           {navItem}
         </ul>

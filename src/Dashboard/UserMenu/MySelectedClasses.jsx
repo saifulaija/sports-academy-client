@@ -6,13 +6,12 @@ import { TiDocumentDelete } from "react-icons/ti";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+
 // TODO pay button have to implemented
 
 const MySelectedClasses = () => {
   const { user } = useContext(AuthContext);
-  const [bookingClasses, setBookingClasses] = useState([]);
+  
 
   const {
     isLoading,

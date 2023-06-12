@@ -8,6 +8,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import { saveUser } from "../../api/auth";
 import { AiFillEyeInvisible } from "react-icons/ai";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { logIn, signInGoogle, setLoading } = useContext(AuthContext);
@@ -58,6 +59,9 @@ const Login = () => {
 
   return (
     <div className="w-full bg-red-50">
+      <Helmet>
+        <title>BD Sports Academy || Login</title>
+      </Helmet>
       <div className="md:flex justify-center gap-16 items-center max-w-[1280px] mx-auto">
         <div className="hidden md:block">
           <img className="drop-shadow-2xl rounded-md" src={loginImage} alt="" />
