@@ -58,13 +58,13 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full bg-red-50">
+    <div className="w-full bg-[#617453]">
       <Helmet>
         <title>BD Sports Academy || Login</title>
       </Helmet>
       <div className="md:flex justify-center gap-16 items-center max-w-[1280px] mx-auto">
         <div className="hidden md:block">
-          <img className="drop-shadow-2xl rounded-md" src={loginImage} alt="" />
+          <img className="drop-shadow-sm rounded-md" src={loginImage} alt="" />
         </div>
         <div className="flex justify-center items-center min-h-screen">
           <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">

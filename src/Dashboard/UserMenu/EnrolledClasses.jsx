@@ -21,7 +21,7 @@ const EnrolledClasses = () => {
   }
 
   return (
-    <div className="w-full bg-white p-16">
+    <div className="w-full text-neutral-100 p-16">
       <div className="">
         <h3 className="text-3xl font-mono font-bold uppercase text-center text-yellow-400">
           Total Booking Classes : {paymentClasses.length}
@@ -33,7 +33,7 @@ const EnrolledClasses = () => {
          <table className="table">
             {/* head */}
 
-            <thead>
+            <thead className="text-neutral-100 text-xl">
               <tr>
                 <th>#</th>
                 <th>Photo</th>

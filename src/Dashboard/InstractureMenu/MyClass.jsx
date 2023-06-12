@@ -17,15 +17,15 @@ const MyClass = () => {
 
   return (
     <div className="">
-      <h3 className=" text-xl md:text-3xl font-bold uppercase text-yellow-500 font-mono text-center py-6">
+      <h3 className=" heading-st">
         {" "}
         Your Total Submitted Classes:{classes.length}
       </h3>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto text-neutral-100">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="text-xl text-neutral-100">
             <tr>
               <th>#</th>
               <th>Class Name</th>
@@ -44,7 +44,7 @@ const MyClass = () => {
                 <td>{item.students}</td>
                 <td>{item.feedback}</td>
                 <td>
-                  <Link to={`/dashboard/update-class/${item._id}`}><button  className="btn-class">Update</button></Link>
+                  <Link to={`/dashboard/update-class/${item._id}`}><button  className="btn-third">Update</button></Link>
                 </td>
               </tr>
             ))}

@@ -115,7 +115,7 @@ const Navbar = () => {
       <div className="max-w-[1280px] mx-auto flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-          <h1 className="text-yellow-500 font-mono  font-bold  sm:text-4xl">
+          <h1 className="text-yellow-400 font-mono  font-bold  sm:text-4xl">
              Sport Academy
           </h1>
         </div>

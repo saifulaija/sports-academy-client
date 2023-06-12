@@ -7,7 +7,7 @@ const PopularCard = ({ item }) => {
   
        <Zoom>
 
-<div className="border-[1px] border-neutral-200 shadow-lg bg-[#f3f1ec]  font-mono text-neutral-600 space-y-4 rounded-md group px-4 pb-8 ">
+<div className="border-[1px] border-neutral-200 shadow-lg bg-[#617453]  font-mono text-neutral-300 space-y-4 rounded-md group px-4 pb-8 ">
       <div className="flex justify-center items-center rounded-lg">
         <img
           className="group-hover:scale-110 rounded-3xl  p-4 transition object-cover max-w-[200px]"

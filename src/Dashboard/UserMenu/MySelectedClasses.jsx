@@ -50,12 +50,12 @@ const MySelectedClasses = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full text-neutral-100">
       <h3 className="heading-st">Your total class: {booking.length}</h3>
       <div className="overflow-x-auto">
         <table className="table font-mono">
           {/* head */}
-          <thead>
+          <thead className="text-xl text-neutral-100">
             <tr>
               <th>#</th>
               <th>Class Name</th>

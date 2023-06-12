@@ -6,7 +6,7 @@ import Zoom from 'react-reveal/Zoom';
 
 const AboutUs = () => {
   return (
-    <div className="w-full p-16 bg-[#617453]">
+    <div className="w-full  bg-neutral-100 p-16">
       <div className="max-w-[1280px] mx-auto">
        <div className="flex justify-center items-center pb-10">
        <Heading

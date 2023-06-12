@@ -69,7 +69,7 @@ const NewClassCard = ({ item }) => {
   return (
    <Zoom>
        <div
-      className={`border-[1px] border-neutral-200 shadow-lg  font-mono text-neutral-600 space-y-4 rounded-md group ${
+      className={`border-[1px] border-neutral-200 shadow-lg  font-mono text-neutral-100  space-y-4 bg-[#617453] rounded-md group ${
         seats <= 0 ? "bg-red-400" : ""
       }`}
     >

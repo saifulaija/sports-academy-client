@@ -45,15 +45,15 @@ const AddClass = () => {
   };
 
   return (
-    <div className="w-full bg-neutral-100 p-16">
-      <h1 className="text-3xl font-bold text-center uppercase">Add Class</h1>
+    <div className="w-full p-16">
+      <h1 className="heading-st">Add Class</h1>
       <form onSubmit={handleSubmit} className="max-w-[900px] mx-auto space-y-6">
         <div className="space-y-1 text-sm">
-          <label htmlFor="location" className="block text-gray-600">
+          <label htmlFor="location" className="block text-gray-100">
             Class Name
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="name"
             id="location"
             type="text"
@@ -62,11 +62,11 @@ const AddClass = () => {
           />
         </div>
         <div className="space-y-1 text-sm">
-          <label htmlFor="location" className="block text-gray-600">
+          <label htmlFor="location" className="block text-neutral-100">
             Image URL
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="photo"
             id="location"
             type="url"
@@ -75,11 +75,11 @@ const AddClass = () => {
           />
         </div>
         <div className="space-y-1 text-sm">
-          <label htmlFor="price" className="block text-gray-600">
+          <label htmlFor="price" className="block text-neutral-100">
             Available Seats
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="seats"
             type="number"
             placeholder="Available seats"
@@ -87,11 +87,11 @@ const AddClass = () => {
           />
         </div>
         <div className="space-y-1 text-sm">
-          <label htmlFor="price" className="block text-gray-600">
+          <label htmlFor="price" className="block text-neutral-100">
             Enrolled Students
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="students"
             type="number"
             placeholder="Available seats"
@@ -99,18 +99,18 @@ const AddClass = () => {
           />
         </div>
         <div className="space-y-1 text-sm">
-          <label htmlFor="price" className="block text-gray-600">
+          <label htmlFor="price" className="block text-neutral-100">
             price
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="price"
             type="number"
             placeholder="price"
             required
           />
         </div>
-        <button className="btn-primary" type="submit">
+        <button className="btn-third" type="submit">
           {" "}
           Add Class
         </button>

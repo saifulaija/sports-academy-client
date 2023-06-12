@@ -23,16 +23,16 @@ useEffect(()=>{
   }
 
   return (
-    <div className="w-full p-10 border-[1px]">
+    <div className="w-full p-10 ">
       <h3 className="heading-st">
         Total Payment Classes : {paymentClasses.length}
       </h3>
       <div className="font-mono">
         <div className="overflow-x-auto">
          <Fade bottom>
-         <table className="table">
+         <table className="table text-white">
             {/* head */}
-            <thead>
+            <thead className="text-xl text-white">
               <tr>
                 <th>#</th>
                 <th>Class Name</th>

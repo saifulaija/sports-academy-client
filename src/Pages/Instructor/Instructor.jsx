@@ -13,16 +13,16 @@ const Instructor = () => {
   }, []);
 
   return (
-    <div className=" mx-auto p-16 bg-red-50">
-      <h1 className="text-3xl font-bold uppercase text-center py-6">
+    <div className=" mx-auto p-16 bg-[#617453]">
+      <h1 className="heading-st">
         Total instructors:{instructors.length}
       </h1>
 
       <div className="">
-        <div className="overflow-x-auto max-w-[1040px] font-mono  mx-auto ">
+        <div className="overflow-x-auto max-w-[1040px] font-mono  mx-auto text-neutral-100">
           <table className="table">
             {/* head */}
-            <thead>
+            <thead className="text-xl text-neutral-100">
               <tr>
                 <th>#</th>
                 <th>Photo</th>
