@@ -4,7 +4,7 @@ const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/instructors")
+    fetch("http://localhost:5000/instructors-all")
       .then((res) => res.json())
       .then((data) => {
         const remaining = data.filter((item) => item.role === "instructor");
