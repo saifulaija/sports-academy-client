@@ -58,13 +58,13 @@ const Sidebar = () => {
       </div>
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
+        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden  w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && '-translate-x-full'
         }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
         <div>
           {/* Branding & Profile Info */}
-          <div className='bg-[#617453]'>
+          <div className=''>
             <div className='w-full hidden md:flex py-2 justify-center items-center bg-[#617453] mx-auto'>
             <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
@@ -74,10 +74,10 @@ const Sidebar = () => {
         </div>
             
             </div>
-            <div className='flex flex-col items-center mt-6 -mx-2 text-neutral-100 font-semibold font-mono'>
-              <span className='text-neutral-100 text-md'><GrUserAdmin className='inline-block text-md'></GrUserAdmin> {role? role : 'students'}</span>
+            <div className='flex flex-col items-center mt-6 -mx-2 text-neutral-500 font-semibold font-mono'>
+              <span className='text-neutral-500 text-md'><GrUserAdmin className='inline-block text-md'></GrUserAdmin> {role? role : 'students'}</span>
               <Link to='/dashboard'>
-                <h4 className='mx-2 mt-2 font-medium text-neutral-100  hover:underline'>
+                <h4 className='mx-2 mt-2 font-medium text-neutral-600  hover:underline'>
                  Name: {user?.displayName}
                 </h4>
               </Link>
@@ -86,7 +86,7 @@ const Sidebar = () => {
           </div>
 
           {/* Nav Items */}
-          <div className='flex flex-col justify-between flex-1  bg-[#617453]'>
+          <div className='flex flex-col justify-between flex-1 text-neutral-500 bg-gray-50'>
             <nav>
               <>
                
@@ -117,8 +117,8 @@ const Sidebar = () => {
           <NavLink
             to='/'
             className={({ isActive }) =>
-              `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+              `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-red-700 ${
+                isActive ? 'bg-gray-300  text-gray-400' : 'text-white'
               }`
             }
           >
@@ -128,9 +128,9 @@ const Sidebar = () => {
           </NavLink>
           <button
             onClick={handleLogOut}
-            className='flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform'
+            className='flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-red-700 transition-colors duration-300 transform'
           >
-            <GrLogout className='w-5 h-5' />
+            <GrLogout className='w-5 h-5 text-white' />
 
             <span className='mx-4 font-medium'>Logout</span>
           </button>
