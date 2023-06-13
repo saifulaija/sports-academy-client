@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
-import loginImage from "../../../src/assets/login.jpg";
+import loginImage from '../../../src/assets/new1jpg.jpg'
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -60,17 +60,17 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full bg-neutral-300">
-      <div className="md:flex justify-center gap-16 items-center py-16 max-w-[1280px] mx-auto">
+    <div className="w-full p-16">
+      <div className="md:flex justify-center border-[1px] border-yellow-500 rounded-lg shadow-xl rounded-lg gap-16 items-center py-16 max-w-[1280px] mx-auto">
         <div className="hidden md:block">
-          <img className="drop-shadow-2xl rounded-md" src={loginImage} alt="" />
+          <img className="rounded-md" src={loginImage} alt="" />
         </div>
         <div className="flex justify-center items-center min-h-[600px]">
-          <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+          <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#617453]  text-gray-900">
             <div className="mb-8 text-center">
-              <h1 className="my-3 text-4xl font-bold">Register Now</h1>
+              <h1 className="heading-st">Register Now</h1>
               <p className="text-sm text-gray-400">
-                Sign in to access your account
+                Sign Up to access your account
               </p>
             </div>
             <form
@@ -169,7 +169,7 @@ const Register = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-indigo-500 w-full rounded-md py-3 text-white"
+                  className="btn-third"
                 >
                   Register Now
                 </button>

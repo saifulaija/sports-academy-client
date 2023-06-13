@@ -1,6 +1,8 @@
 
 
 import { FcSportsMode } from "react-icons/fc";
+import { BiLocationPlus } from "react-icons/bi";
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 
 const Footer = () => {
 
@@ -8,11 +10,27 @@ const Footer = () => {
 
   return (
     <div>
-    <footer className="footer bg-[#617453] border-[1px] max-h-[200px] footer-center px-16 pt-16  text-base-content rounded font-mono">
+    <footer className="footer bg-[#617453] border-t-[1px] footer-center px-16 pt-16  text-base-content rounded font-mono">
      <div className="md:flex justify-between gap-8 ">
-     <div className="flex justify-center items-center ">
-            <FcSportsMode size={50} className=""></FcSportsMode>
-            <h1 className=" text-sm md:text-2xl text-yellow-400 font-abc uppercase font-semibold">BD Sports Academy</h1>
+     <div className="flex flex-col">
+           <div className="flex justify-center items-center ">
+           <FcSportsMode size={50} className=""></FcSportsMode>
+            <h1 className=" text-sm md:text-2xl text-yellow-400 font-abc uppercase font-semibold">Sports Academy</h1>
+           </div>
+           <div className="flex justify-center items-center ">
+           <BiLocationPlus className='text-neutral-200' size={25}></BiLocationPlus>
+            <p className=" text-sm md:text-lg text-neutral-200 mont-mono font-semibold">Bonani Dhaka-1200</p>
+           </div>
+           <div className="flex justify-center gap-2 items-center ">
+           <AiOutlineMail size={20} className='text-neutral-200 ml-2'></AiOutlineMail>
+            <h1 className=" text-md  text-neutral-200 mont-mono font-semibold">bgbangla@gmail.com</h1>
+           </div>
+           <div className="flex justify-center gap-2 items-center ">
+           <AiOutlinePhone size={25} className='text-neutral-200 ml-2'></AiOutlinePhone>
+            <h1 className=" text-md text-neutral-200 mont-mono font-semibold">+880172568695</h1>
+           </div>
+          
+
       </div>
       <div className="form-control">
   <div className="input-group">

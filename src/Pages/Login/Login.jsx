@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
-import loginImage from "../../../src/assets/login.jpg";
+import  loginImage from '../../../src/assets/new1jpg.jpg'
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -58,18 +58,18 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full bg-[#617453]">
+    <div className="w-ful p-16">
       <Helmet>
         <title>BD Sports Academy || Login</title>
       </Helmet>
-      <div className="md:flex justify-center gap-16 items-center max-w-[1280px] mx-auto">
+      <div className="md:flex justify-center gap-16 items-center border-[1px] border-yellow-500 shadow-xl rounded-lg p-6 max-w-[1280px] mx-auto">
         <div className="hidden md:block">
           <img className="drop-shadow-sm rounded-md" src={loginImage} alt="" />
         </div>
         <div className="flex justify-center items-center min-h-screen">
-          <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+          <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#617453] text-gray-900">
             <div className="mb-8 text-center">
-              <h1 className="my-3 text-4xl font-bold">Log In</h1>
+              <h1 className="heading-st">Login Now</h1>
               <p className="text-sm text-gray-400">
                 Sign in to access your account
               </p>
@@ -116,9 +116,9 @@ const Login = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-indigo-500 w-full rounded-md py-3 text-white"
+                  className="btn-third"
                 >
-                  Continue
+                  Signin Now
                 </button>
               </div>
             </form>
@@ -142,7 +142,7 @@ const Login = () => {
               Don't have an account yet?
               <Link
                 to="/register"
-                className="hover:underline hover:text-blue-500 text-gray-600"
+                className="hover:underline hover:text-blue-500 text-yellow-500"
               >
                 Sign up
               </Link>

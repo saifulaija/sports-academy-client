@@ -13,16 +13,17 @@ const Instructor = () => {
   }, []);
 
   return (
-    <div className=" mx-auto p-16 bg-[#617453]">
-      <h1 className="heading-st">
+    <div className=" mx-auto p-4 md:p-16">
+     <div className="w-full md:max-w-[1280px] mx-auto border-[1px] border-yellow-500 shadow-xl rounded-lg">
+     <h1 className="heading-st">
         Total instructors:{instructors.length}
       </h1>
 
       <div className="">
-        <div className="overflow-x-auto max-w-[1040px] font-mono  mx-auto text-neutral-100">
+        <div className="overflow-x-auto max-w-[1040px] font-mono  mx-auto text-neutral-500">
           <table className="table">
             {/* head */}
-            <thead className="text-xl text-neutral-100">
+            <thead className="text-lg text-neutral-500">
               <tr>
                 <th>#</th>
                 <th>Photo</th>
@@ -54,6 +55,7 @@ const Instructor = () => {
           </table>
         </div>
       </div>
+     </div>
     </div>
   );
 };
