@@ -13,7 +13,8 @@ const AddClass = () => {
     const photo = event.target.photo.value;
     const price = parseFloat(event.target.price.value);
     const seats =parseFloat(event.target.seats.value);
-    const students=parseFloat(event.target.students.value);
+    // const students=parseFloat(event.target.students.value);
+    const students=parseFloat('0');
 
     const status = "pending";
     const instructor = {
@@ -49,7 +50,7 @@ const AddClass = () => {
       <h1 className="heading-st">Add Class</h1>
       <form onSubmit={handleSubmit} className="max-w-[900px] mx-auto space-y-6">
         <div className="space-y-1 text-sm">
-          <label htmlFor="location" className="block text-gray-100">
+          <label htmlFor="location" className="block text-gray-500">
             Class Name
           </label>
           <input
@@ -62,7 +63,7 @@ const AddClass = () => {
           />
         </div>
         <div className="space-y-1 text-sm">
-          <label htmlFor="location" className="block text-neutral-100">
+          <label htmlFor="location" className="block text-neutral-500">
             Image URL
           </label>
           <input
@@ -75,10 +76,11 @@ const AddClass = () => {
           />
         </div>
         <div className="space-y-1 text-sm">
-          <label htmlFor="price" className="block text-neutral-100">
+          <label htmlFor="price" className="block text-neutral-500">
             Available Seats
           </label>
           <input
+          
             className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="seats"
             type="number"
@@ -86,8 +88,8 @@ const AddClass = () => {
             required
           />
         </div>
-        <div className="space-y-1 text-sm">
-          <label htmlFor="price" className="block text-neutral-100">
+        {/* <div className="space-y-1 text-sm">
+          <label htmlFor="price" className="block text-neutral-500">
             Enrolled Students
           </label>
           <input
@@ -97,9 +99,9 @@ const AddClass = () => {
             placeholder="Available seats"
             required
           />
-        </div>
+        </div> */}
         <div className="space-y-1 text-sm">
-          <label htmlFor="price" className="block text-neutral-100">
+          <label htmlFor="price" className="block text-neutral-500">
             price
           </label>
           <input

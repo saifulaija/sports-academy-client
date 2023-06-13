@@ -22,10 +22,10 @@ const MyClass = () => {
         Your Total Submitted Classes:{classes.length}
       </h3>
 
-      <div className="overflow-x-auto text-neutral-100">
+      <div className="overflow-x-auto text-neutral-500">
         <table className="table">
           {/* head */}
-          <thead className="text-xl text-neutral-100">
+          <thead className="text-lg text-neutral-500">
             <tr>
               <th>#</th>
               <th>Class Name</th>

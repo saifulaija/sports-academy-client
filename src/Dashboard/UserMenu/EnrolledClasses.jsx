@@ -25,7 +25,7 @@ const EnrolledClasses = () => {
    <>
    
    {
-    paymentClasses && Array.isArray(paymentClasses) && paymentClasses.length > 0?  <div className="w-full text-neutral-100 p-16">
+    paymentClasses && Array.isArray(paymentClasses) && paymentClasses.length > 0?  <div className="w-full text-neutral-500 p-16">
     <div className="">
       <h3 className="text-3xl font-mono font-bold uppercase text-center text-yellow-400">
         Total Booking Classes : {paymentClasses.length}
@@ -34,10 +34,10 @@ const EnrolledClasses = () => {
     <div className=" mx-auto p-10 flex justify-center items-center ">
       <div className="overflow-x-auto w-full font-mono mx-auto ">
        <Fade top>
-       <table className="table">
+       <table className="table text-neutral-500">
           {/* head */}
 
-          <thead className="text-neutral-100 text-xl">
+          <thead className="text-neutral-500 text-xl">
             <tr>
               <th>#</th>
               <th>Photo</th>

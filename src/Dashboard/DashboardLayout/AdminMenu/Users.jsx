@@ -48,9 +48,9 @@ const Users = () => {
       <h3 className="heading-st">Total Users: {users.length}</h3>
       <div>
         <div className="overflow-x-auto">
-          <table className="table text-neutral-100 font-mono">
+          <table className="table text-neutral-500 font-mono">
             {/* head */}
-            <thead className="text-lg font-mono text-neutral-100">
+            <thead className="text-lg font-mono text-neutral-500">
               <tr>
                 <th>#</th>
                 <th>Name</th>

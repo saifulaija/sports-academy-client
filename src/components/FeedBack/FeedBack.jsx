@@ -41,7 +41,7 @@ const FeedBack = () => {
             name="feedback"
           ></textarea>
         </div>
-        <button className="btn-primary">Send to instructor</button>
+        <button className="btn-third">Send to instructor</button>
       </form>
     </div>
   );

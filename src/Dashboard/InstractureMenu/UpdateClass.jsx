@@ -55,7 +55,7 @@ const UpdateClass = () => {
             Class Name
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="name"
             defaultValue={update.name}
             id="location"
@@ -69,7 +69,7 @@ const UpdateClass = () => {
             Image URL
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+             className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="photo"
             defaultValue={update.photo}
             
@@ -83,7 +83,7 @@ const UpdateClass = () => {
             Available Seats
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+             className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="seats"
             defaultValue={update.seats}
             type="number"
@@ -97,7 +97,7 @@ const UpdateClass = () => {
             price
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-[#367379] focus:outline-[#367379] rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
             name="price"
             defaultValue={update.price}
             type="number"
@@ -105,7 +105,7 @@ const UpdateClass = () => {
             required
           />
         </div>
-        <button className="btn-primary font-mono" type="submit">
+        <button className="btn-third font-mono" type="submit">
           {" "}
           Update Class
         </button>
