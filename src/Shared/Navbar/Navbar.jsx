@@ -82,6 +82,7 @@ const Navbar = () => {
 
           <li>
             <img
+            referrerPolicy="no-referrer"
               className="w-[40px] h-[40px] rounded-full"
               src={user?.photoURL}
               alt=""

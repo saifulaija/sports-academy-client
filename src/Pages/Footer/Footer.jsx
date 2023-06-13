@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <div>
-    <footer className="footer bg-[#617453]  footer-center p-16  text-base-content rounded font-mono">
+    <footer className="footer bg-[#617453] border-[1px] max-h-[200px] footer-center px-16 pt-16  text-base-content rounded font-mono">
      <div className="md:flex justify-between gap-8 ">
      <div className="flex justify-center items-center ">
             <FcSportsMode size={50} className=""></FcSportsMode>

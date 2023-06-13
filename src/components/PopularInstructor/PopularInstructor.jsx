@@ -15,7 +15,7 @@ const PopularInstructor = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white p-16">
+    <div className="w-full p-16">
       <div className="max-w-[1280px] mx-auto border-[1px] border-yellow-500 rounded-xl shadow-xl p-6">
         <div className="flex justify-center items-center">
           <Heading

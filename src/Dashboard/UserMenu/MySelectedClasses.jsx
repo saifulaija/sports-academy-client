@@ -6,12 +6,12 @@ import { TiDocumentDelete } from "react-icons/ti";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import EmptyState from "../../Shared/EmptyState/EmptyState";
 
 // TODO pay button have to implemented
 
 const MySelectedClasses = () => {
   const { user } = useContext(AuthContext);
-  
 
   const {
     isLoading,
@@ -25,11 +25,8 @@ const MySelectedClasses = () => {
     },
   });
 
-  
-    // const remaining = booking.filter((item) => (item.payment = "pending"));
-    // setBookingClasses(remaining);
-   
-  
+  // const remaining = booking.filter((item) => (item.payment = "pending"));
+  // setBookingClasses(remaining);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/bookings/${id}`, {
@@ -50,53 +47,62 @@ const MySelectedClasses = () => {
   }
 
   return (
-    <div className="w-full text-neutral-100">
-      <h3 className="heading-st">Your total class: {booking.length}</h3>
-      <div className="overflow-x-auto">
-        <table className="table font-mono">
-          {/* head */}
-          <thead className="text-xl text-neutral-100">
-            <tr>
-              <th>#</th>
-              <th>Class Name</th>
-              <th>Price</th>
-              <th>Available Seats</th>
-              <th>Role</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {booking.map((item, index) => (
-              <tr key={item._id}>
-                <th>{index + 1}</th>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td className="text-center">{item.seats}</td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(item._id)}
-                    className="btn-third"
-                  >
-                    <TiDocumentDelete className="inline-block"></TiDocumentDelete>{" "}
-                    Delete
-                  </button>
-                </td>
-                <td>
-                  <Link to={`/dashboard/payment/${item._id}`}>
+   <>
+   
+   {
+    booking && Array.isArray(booking) && booking.length > 0 ?  <div className="w-full font-mono font-semibold">
+    <h3 className="heading-st">
+      Your total selected class: {booking.length}
+    </h3>
+    <div className="overflow-x-auto">
+      <table className="table text-neutral-500   font-mono">
+        {/* head */}
+        <thead className="text-[18px]">
+          <tr>
+            <th>#</th>
+            <th>Class Name</th>
+            <th>Price</th>
+            <th>Available Seats</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {booking.map((item, index) => (
+            <tr key={item._id}>
+              <th>{index + 1}</th>
+              <td>{item.name}</td>
+              <td>{item.price}</td>
+              <td className="text-center">{item.seats}</td>
+              <td>
+                <button
+                  onClick={() => handleDelete(item._id)}
+                  className="btn-third"
+                >
+                  <TiDocumentDelete className="inline-block"></TiDocumentDelete>{" "}
+                  Delete
+                </button>
+              </td>
+              <td>
+                <Link to={`/dashboard/payment/${item._id}`}>
+                  {" "}
+                  <button className="btn-third">
                     {" "}
-                    <button className="btn-third">
-                      {" "}
-                      <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
-                      Pay
-                    </button>
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                    <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
+                    Pay
+                  </button>
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div> :<EmptyState message={'You have no selected Class'} address={'/all-classes'} label={'Browse Class'}></EmptyState>
+   }
+   
+   
+   </>
   );
 };
 
