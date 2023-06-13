@@ -45,12 +45,12 @@ const Users = () => {
 
   return (
     <div>
-      <h3 className="text-2xl font-bold">Total Users: {users.length}</h3>
+      <h3 className="heading-st">Total Users: {users.length}</h3>
       <div>
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="table text-neutral-100 font-mono">
             {/* head */}
-            <thead>
+            <thead className="text-lg font-mono text-neutral-100">
               <tr>
                 <th>#</th>
                 <th>Name</th>
@@ -70,8 +70,8 @@ const Users = () => {
                   <td>
                     <button
                       onClick={() => handleMakeInstructor(item)}
-                      disabled={item.role == 'instructor'}
-                      className="btn-primary"
+                      disabled={item.role === 'instructor'}
+                      className="btn-third"
                     >
                       Make Instructor
                     </button>
@@ -79,8 +79,8 @@ const Users = () => {
                   <td>
                     <button
                       onClick={() => handleMakeAdmin(item)}
-                      disabled={item.role === "admin"}
-                      className="btn-primary"
+                      disabled={item.role === 'admin'}
+                      className="btn-third"
                     >
                       Make Admin
                     </button>

@@ -2,7 +2,8 @@ import  { useContext, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 
-import { GrLogout } from 'react-icons/gr'
+
+import { GrLogout, GrUserAdmin  } from 'react-icons/gr'
 
 import { AiOutlineBars, AiOutlineHome } from 'react-icons/ai'
 import { FcSportsMode } from "react-icons/fc";
@@ -11,12 +12,14 @@ import { AuthContext } from '../../../Providers/AuthProvider'
 import AdminMenu from '../AdminMenu/AdminMenu';
 import InstractureMenu from '../../InstractureMenu/InstractureMenu';
 import UserMenu from '../../UserMenu/UserMenu';
+import { Helmet } from 'react-helmet-async';
 const Sidebar = () => {
       
 
   const navigate = useNavigate()
 
   const { user, logOut, role } = useContext(AuthContext)
+  
 
   const [isActive, setActive] = useState('false')
   
@@ -32,6 +35,9 @@ const Sidebar = () => {
     <>
       {/* Small Screen Navbar */}
       <div className=' text-gray-800 flex justify-between md:hidden'>
+        <Helmet>
+          <title>Sports Academy - Dashboard</title>
+        </Helmet>
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
           <div className="flex items-center">
@@ -58,40 +64,29 @@ const Sidebar = () => {
       >
         <div>
           {/* Branding & Profile Info */}
-          <div>
-            <div className='w-full hidden md:flex py-2 justify-center items-center bg-white mx-auto'>
+          <div className='bg-[#617453]'>
+            <div className='w-full hidden md:flex py-2 justify-center items-center bg-[#617453] mx-auto'>
             <div className="flex items-center">
           <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-          <h1 className="text-indigo-500 font-serif uppercase tracking-wider text-sm">
+          <h1 className="text-yellow-500 font-serif uppercase tracking-wider text-sm">
             BD Sport Academy
           </h1>
         </div>
             
             </div>
-            <div className='flex flex-col items-center mt-6 -mx-2'>
+            <div className='flex flex-col items-center mt-6 -mx-2 text-neutral-100 font-semibold font-mono'>
+              <span className='text-neutral-100 text-md'><GrUserAdmin className='inline-block text-md'></GrUserAdmin> {role? role : 'students'}</span>
               <Link to='/dashboard'>
-                <img
-                  className='object-cover w-24 h-24 mx-2 rounded-full'
-                  src={user?.photoURL}
-                  alt='avatar'
-                  referrerPolicy='no-referrer'
-                />
-              </Link>
-              <Link to='/dashboard'>
-                <h4 className='mx-2 mt-2 font-medium text-gray-800  hover:underline'>
-                  {user?.displayName}
+                <h4 className='mx-2 mt-2 font-medium text-neutral-100  hover:underline'>
+                 Name: {user?.displayName}
                 </h4>
               </Link>
-              <Link to='/dashboard'>
-                <p className='mx-2 mt-1 text-sm font-medium text-gray-600  hover:underline'>
-                  {user?.email}
-                </p>
-              </Link>
+             
             </div>
           </div>
 
           {/* Nav Items */}
-          <div className='flex flex-col justify-between flex-1 mt-6'>
+          <div className='flex flex-col justify-between flex-1  bg-[#617453]'>
             <nav>
               <>
                
@@ -100,7 +95,7 @@ const Sidebar = () => {
                  role && role === 'admin'? <AdminMenu></AdminMenu>: role && role === 'instructor'?  <InstractureMenu></InstractureMenu> : <UserMenu></UserMenu>
             }
                
-                <NavLink
+                {/* <NavLink
                   to='add-room'
                   className={({ isActive }) =>
                     `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -111,13 +106,13 @@ const Sidebar = () => {
                   <BsFillHouseAddFill className='w-5 h-5' />
 
                   <span className='mx-4 font-medium'>Add Room</span>
-                </NavLink>
+                </NavLink> */}
               </>
             </nav>
           </div>
         </div>
 
-        <div>
+        <div className='bg-[#617453] text-neutral-100 font-mono'>
           <hr />
           <NavLink
             to='/'

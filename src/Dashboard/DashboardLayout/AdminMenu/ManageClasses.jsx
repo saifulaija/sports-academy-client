@@ -46,8 +46,8 @@ const ManageClasses = () => {
 
 
   return (
-    <div className="max-w-[1050px] mx-auto bg-white p-16">
-      <h3 className="text-3xl font-bold text-center uppercase">
+    <div className="max-w-[1050px] mx-auto  p-16">
+      <h3 className="heading-st">
         Total class:{classes.length}
       </h3>
       <div className="grid md:grid-cols-3 gap-6">

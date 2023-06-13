@@ -20,12 +20,12 @@
       }
 
       .btn-class{
-            @apply bg-[#384d54] px-2 text-white rounded-full hover:bg-opacity-75 transition 
+            @apply bg-yellow-500 px-2 text-white rounded-full hover:bg-opacity-75 transition 
       }
       .heading-st{
             @apply text-xl md:text-3xl font-bold font-mono text-yellow-500  uppercase text-center p-8 drop-shadow-xl
       }
       .btn-third{
-            @apply bg-yellow-500 px-8 hover:bg-opacity-60 transition py-2 text-white font-bold rounded-lg
+            @apply bg-yellow-500 px-8  transition py-2 text-white font-bold rounded-lg
       }
     
