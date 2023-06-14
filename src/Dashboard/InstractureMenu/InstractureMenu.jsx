@@ -2,11 +2,9 @@ import { NavLink } from "react-router-dom";
 
 import { AiFillFileAdd } from "react-icons/ai";
 
-import {BiHomeSmile} from "react-icons/bi";
 const InstractureMenu = () => {
   return (
     <>
-     
       <NavLink
         to="/dashboard/add-form"
         className={({ isActive }) =>
@@ -31,8 +29,6 @@ const InstractureMenu = () => {
 
         <span className="mx-4 font-medium">My Classes</span>
       </NavLink>
-
-     
     </>
   );
 };

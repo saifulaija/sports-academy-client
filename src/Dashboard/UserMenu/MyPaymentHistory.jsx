@@ -32,9 +32,9 @@ const MyPaymentHistory = () => {
       <div className="font-mono">
         <div className="overflow-x-auto">
           <Fade bottom>
-            <table className="table text-white">
+            <table className="table">
               {/* head */}
-              <thead className="text-xl text-white">
+              <thead className="text-lg">
                 <tr>
                   <th>#</th>
                   <th>Class Name</th>
