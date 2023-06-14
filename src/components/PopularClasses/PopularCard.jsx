@@ -16,9 +16,9 @@ const PopularCard = ({ item }) => {
         />
       </div>
       <p className="uppercase font-bold pl-2">{name}</p>
-      <p className="pl-2">Instructor: {item.instructor.name}</p>
+      <p className="pl-2">Instructor:{item.instructor.name}</p>
       <div className="border-[1px] border-neutral-200 flex justify-center space-x-10 items-center text-yellow-500 ">
-        <p>seats:{seats}</p>
+        <p>Available seats:{seats}</p>
         <p>students:{students}</p>
       </div>
     </div>

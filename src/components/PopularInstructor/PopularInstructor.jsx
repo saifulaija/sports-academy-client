@@ -9,8 +9,8 @@ const PopularInstructor = () => {
     fetch("https://assignment-server-12-indol.vercel.app/instructors")
       .then((res) => res.json())
       .then((data) => {
-        const remaining = data.filter((item) => item.role === "instructor");
-        setInstructors(remaining);
+        
+        setInstructors(data);
       });
   }, []);
 
