@@ -10,7 +10,7 @@ const FeedBack = () => {
 
     const feedback = event.target.feedback.value;
     const update = { feedback };
-    fetch(`http://localhost:5000/updated/${id}`, {
+    fetch(`https://assignment-server-12-indol.vercel.app/updated/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

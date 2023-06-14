@@ -6,7 +6,7 @@ const PopularInstructor = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/instructors")
+    fetch("https://assignment-server-12-indol.vercel.app/instructors")
       .then((res) => res.json())
       .then((data) => {
         const remaining = data.filter((item) => item.role === "instructor");

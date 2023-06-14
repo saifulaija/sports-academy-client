@@ -1,6 +1,6 @@
 
 export const addClass  = async classData =>{
-      const response = await fetch(`http://localhost:5000/classes`,{
+      const response = await fetch(`https://assignment-server-12-indol.vercel.app/classes`,{
             method:'POST',
             headers:{
                   'content-type': 'application/json'
