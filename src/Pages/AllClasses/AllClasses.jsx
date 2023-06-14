@@ -1,12 +1,13 @@
+import axios from "axios";
 import NewClassCard from "./NewClassCard";
 import { useEffect, useState } from "react";
 
 const AllClasses = () => {
   const [allClass, setAllClass] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/all-classes")
-      .then((res) => res.json())
-      .then((data) => setAllClass(data));
+    axios.get("http://localhost:5000/all-classes").then((response) => {
+      setAllClass(response.data);
+    });
   }, []);
 
   return (
