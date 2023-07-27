@@ -17,7 +17,7 @@ import { getRole, getStatus } from "../api/auth";
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
-const AuthProvider = ({ children }) => {
+const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [role, setRole] = useState(null);

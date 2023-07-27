@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const AllClasses = () => {
   const [allClass, setAllClass] = useState([]);
   useEffect(() => {
-    axios.get("https://assignment-server-12-indol.vercel.app/all-classes").then((response) => {
+    axios.get("http://localhost:5000/all-classes").then((response) => {
       setAllClass(response.data);
     });
   }, []);

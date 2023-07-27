@@ -11,7 +11,7 @@ const MyPaymentHistory = () => {
 
   const [paymentClasses, setPaymentClasses] = useState([]);
   useEffect(() => {
-    fetch(`https://assignment-server-12-indol.vercel.app/payment-all/${user?.email}`)
+    fetch(`http://localhost:5000/payment-all/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPaymentClasses(data);

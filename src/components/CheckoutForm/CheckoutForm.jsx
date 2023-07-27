@@ -21,7 +21,7 @@ const CheckoutForm = ({ paymentData }) => {
   useEffect(() => {
     if (paymentData?.price) {
       axios
-        .post("https://assignment-server-12-indol.vercel.app/create-payment-intent", {
+        .post("http://localhost:5000/create-payment-intent", {
           price: paymentData?.price,
         })
         .then((res) => {
@@ -88,7 +88,7 @@ const CheckoutForm = ({ paymentData }) => {
           transactionId: paymentIntent.id,
           date: new Date(),
         };
-        fetch("https://assignment-server-12-indol.vercel.app/payment", {
+        fetch("http://localhost:5000/payment", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -99,7 +99,7 @@ const CheckoutForm = ({ paymentData }) => {
           .then((data) => {
             if (data.insertedId) {
               // update booking status
-              fetch(`https://assignment-server-12-indol.vercel.app/payment/${paymentData._id}`, {
+              fetch(`http://localhost:5000/payment/${paymentData._id}`, {
                 method: "PATCH",
               })
                 .then((res) => res.json())

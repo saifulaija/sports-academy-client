@@ -68,7 +68,7 @@ const router = createBrowserRouter([
           {
             path:'feedback/:id',
             element:<FeedBack></FeedBack>,
-            loader: ({params}) => fetch(`https://assignment-server-12-indol.vercel.app/feedback/${params.id}`)
+            loader: ({params}) => fetch(`http://localhost:5000/feedback/${params.id}`)
           },
           {
             path:'my-classes',
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
           {
             path:'update-class/:id',
             element:<UpdateClass></UpdateClass>,
-            loader: ({params}) => fetch(`https://assignment-server-12-indol.vercel.app/update/${params.id}`)
+            loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`)
           },
           {
             path:'my-bookings',
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
           {
             path:'payment/:id',
             element: <Payment></Payment>,
-            loader:({params})=> fetch(`https://assignment-server-12-indol.vercel.app/payment/${params.id}`)
+            loader:({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
           },
           {
             path:'payment-classes',

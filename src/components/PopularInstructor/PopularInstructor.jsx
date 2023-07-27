@@ -1,68 +1,51 @@
 import { useEffect, useState } from "react";
 import Heading from "../../Shared/Heading/Heading";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
+import { FaEnvelope } from "react-icons/fa";
 
 const PopularInstructor = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("https://assignment-server-12-indol.vercel.app/instructors")
+    fetch("http://localhost:5000/instructors")
       .then((res) => res.json())
       .then((data) => {
-        
         setInstructors(data);
       });
   }, []);
 
   return (
-    <div className="w-full p-16">
-      <div className="max-w-[1280px] mx-auto border-[1px] border-yellow-500 rounded-xl shadow-xl p-6">
-        <div className="flex justify-center items-center">
-          <Heading
-            heading={"popular instructor"}
-            text={
-              "There are most popular Instructor in our academy in the country and world ranking"
-            }
-          ></Heading>
-        </div>
-        <div className=" mx-auto flex justify-center items-center ">
-          <div className="overflow-x-auto w-full font-mono mx-auto ">
-            <table className="table">
-              {/* head */}
-             <Fade top>
-             <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Photo</th>
-                  <th> Name</th>
-                  <th>Email</th>
-                </tr>
-              </thead>
-             </Fade>
-             <Fade bottom>
-             <tbody>
-                {instructors.map((item, index) => (
-                  <tr key={item._id}>
-                    <th>{index + 1}</th>
-                    <td>
-                      <div className="flex items-center space-x-3">
-                        <div className="avatar">
-                          <div className="mask mask-squircle w-12 h-12">
-                            <img
-                              src={item.image}
-                              alt="Avatar Tailwind CSS Component"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>{item.name}</td>
-                    <td>{item.email}</td>
-                  </tr>
-                ))}
-              </tbody>
-             </Fade>
-            </table>
+    <div>
+      <div className="flex justify-center">
+        <Heading
+          heading={"popular Instructor"}
+          text={"Here most popular six Instructor all over the world"}
+        ></Heading>
+      </div>
+
+      <div className="w-full p-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {instructors.map((item, index) => (
+              <Fade key={item._id} delay={index * 100}>
+                <div className="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center items-center transition-transform transform hover:scale-105">
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+                    <img
+                      src={item.image}
+                      alt="Avatar"
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                    {item.name}
+                  </h2>
+                  <p className="text-gray-600 text-sm">
+                    <FaEnvelope className="inline-block mr-2" />
+                    {item.email}
+                  </p>
+                </div>
+              </Fade>
+            ))}
           </div>
         </div>
       </div>
