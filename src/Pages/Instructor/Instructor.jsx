@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaEnvelope } from "react-icons/fa";
+import { Fade } from "react-reveal";
 
 const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   useEffect(() => {
     fetch("http://localhost:5000/instructors-all")
@@ -12,50 +16,56 @@ const Instructor = () => {
       });
   }, []);
 
-  return (
-    <div className=" mx-auto p-4 md:p-16">
-     <div className="w-full md:max-w-[1280px] mx-auto border-[1px] border-yellow-500 shadow-xl rounded-lg">
-     <h1 className="heading-st">
-        Total instructors:{instructors.length}
-      </h1>
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
-      <div className="">
-        <div className="overflow-x-auto max-w-[1040px] font-mono  mx-auto text-neutral-500">
-          <table className="table">
-            {/* head */}
-            <thead className="text-lg text-neutral-500">
-              <tr>
-                <th>#</th>
-                <th>Photo</th>
-                <th> Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              {instructors.map((item, index) => (
-                <tr key={item._id}>
-                  <th>{index + 1}</th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img
-                            src={item.image}
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>{item.name}</td>
-                  <td>{item.email}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentInstructors = instructors.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(instructors.length / itemsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  return (
+    <div className="w-full p-16">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentInstructors.map((item, index) => (
+            <Fade key={item._id} delay={index * 100}>
+            <div className="bg-blue-50 rounded-lg shadow-md p-6 flex flex-col items-center transition-transform transform hover:scale-105">
+              <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-[#008080]">
+                <img
+                  src={item.image}
+                  alt="Avatar"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <h2 className="text-xl font-semibold text-[#008080] mb-2">
+                {item.name}
+              </h2>
+              <p className="text-gray-600 text-sm">
+                <FaEnvelope className="inline-block mr-2 text-[#008080]" />
+                {item.email}
+              </p>
+            </div>
+          </Fade>
+          ))}
+        </div>
+        <div className="flex justify-center gap-1 mt-6">
+          {pageNumbers.map((pageNumber) => (
+            <button
+              key={pageNumber}
+              className={`px-4 py-1 rounded-md cursor-pointer ${
+                currentPage === pageNumber ? "bg-[#008080] text-white" : "bg-gray-200 hover:bg-gray-300"
+              }`}
+              onClick={() => handlePageChange(pageNumber)}
+            >
+              {pageNumber}
+            </button>
+          ))}
         </div>
       </div>
-     </div>
     </div>
   );
 };

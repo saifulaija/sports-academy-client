@@ -27,5 +27,12 @@
       }
       .btn-third{
             @apply bg-yellow-500 px-8  transition py-2 text-white font-bold rounded-lg
+
+           
       }
+
+       body {
+                  font-family: 'Poppins', sans-serif;
+            
+                }
     

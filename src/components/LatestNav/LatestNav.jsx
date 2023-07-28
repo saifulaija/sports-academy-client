@@ -32,16 +32,14 @@ const LatestNav = () => {
   };
 
   const handleLogout = () => {
-      logOut()
-        .then(() => {
-          toast.success("Logout successful");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-
-  
+    logOut()
+      .then(() => {
+        toast.success("Logout successful");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const navItem = (
     <>
@@ -49,7 +47,7 @@ const LatestNav = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-green-500 underline" : " text-white font-serif"
+            isActive ? "text-green-500 underline" : " text-white"
           }
         >
           Home
@@ -58,7 +56,7 @@ const LatestNav = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 underline" : " text-white font-serif"
+            isActive ? "text-green-500 underline" : " text-white"
           }
           to="/teacher"
         >
@@ -68,7 +66,7 @@ const LatestNav = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 underline" : " text-white font-serif"
+            isActive ? "text-green-500 underline" : " text-white"
           }
           to="/all-classes"
         >
@@ -108,7 +106,7 @@ const LatestNav = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "text-green-500 underline" : " text-white font-serif"
+                isActive ? "text-green-500 underline" : " text-white"
               }
               to="/dashboard"
             >
@@ -116,7 +114,6 @@ const LatestNav = () => {
             </NavLink>
           </li>
 
-         
           <li>
             <img
               referrerPolicy="no-referrer"
@@ -128,7 +125,7 @@ const LatestNav = () => {
           <li>
             <NavLink
               onClick={handleLogout}
-              className="bg-[#ff6c2f] px-5 py-1 rounded-md outline-none text-white font-medium hover:opacity-75"
+              className="bg-[#ff6c2f] px-5 py-1 rounded-lg outline-none text-white font-medium hover:opacity-75"
               to="/login"
             >
               Logout
@@ -138,29 +135,26 @@ const LatestNav = () => {
       ) : (
         <li>
           <NavLink
-            className="bg-[#ff6c2f] px-5 py-1 rounded-md outline-none text-white font-medium hover:opacity-75"
+            className="bg-[#ff6c2f] px-5 py-1 rounded-lg outline-none text-white font-medium hover:opacity-75"
             to="/login"
           >
-           Login 
+            Login
           </NavLink>
         </li>
       )}
     </>
   );
 
-  
-
   return (
-    <nav className="bg-[#004e98]  p-6  sticky top-0 z-50">
+    <nav className="bg-[#008080]  p-6  sticky top-0 z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <NavLink
               to="/"
-              className="text-white text-xl font-bold flex items-center font-serif"
-             
+              className="text-white text-xl font-bold flex items-center"
             >
-                  <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
+              <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
               Sports Academy
             </NavLink>
           </div>
@@ -183,7 +177,7 @@ const LatestNav = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="mt-2 md:hidden rounded-lg shadow-lg">
-            <ul className="bg-[#023b70] rounded-lg p-4">{navItem}</ul>
+            <ul className="bg-[#1e3d3d] rounded-lg p-4">{navItem}</ul>
           </div>
         )}
       </div>
