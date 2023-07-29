@@ -13,7 +13,7 @@ const Users = () => {
   console.log(role);
 
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:5000/users");
+    const res = await fetch("https://assignment-server-12-saifulaija.vercel.app/users");
     return res.json();
   });
 
@@ -34,7 +34,7 @@ const Users = () => {
 
 
   const handleMakeAdmin = (item) => {
-    fetch(`http://localhost:5000/admin/${item._id}`, {
+    fetch(`https://assignment-server-12-saifulaija.vercel.app/admin/${item._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -49,7 +49,7 @@ const Users = () => {
 
   const handleMakeInstructor = (item) => {
     console.log(item);
-    fetch(`http://localhost:5000/instructor/${item._id}`, {
+    fetch(`https://assignment-server-12-saifulaija.vercel.app/instructor/${item._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

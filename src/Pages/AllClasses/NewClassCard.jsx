@@ -27,7 +27,7 @@ const NewClassCard = ({ item }) => {
       };
 
       console.log(orderClass);
-      fetch("http://localhost:5000/bookings", {
+      fetch("https://assignment-server-12-saifulaija.vercel.app/bookings", {
         method: "POST",
         headers: {
           "content-type": "application/json",

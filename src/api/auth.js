@@ -10,7 +10,7 @@ export const saveUser = user=>{
             image: user.photoURL,
             
       }
-      fetch(`http://localhost:5000/users/${user?.email}`,{
+      fetch(`https://assignment-server-12-saifulaija.vercel.app/users/${user?.email}`,{
             method: 'PUT',
             headers:{
                   'content-type':'application/json'
@@ -26,12 +26,12 @@ export const saveUser = user=>{
 
 // get role
  export const getRole = async email =>{
-      const response = await fetch(`http://localhost:5000/role/${email}`)
+      const response = await fetch(`https://assignment-server-12-saifulaija.vercel.app/role/${email}`)
       const user = await response.json()
       return user?.role
 }
  export const getStatus = async email =>{
-      const response = await fetch(`http://localhost:5000/role/${email}`)
+      const response = await fetch(`https://assignment-server-12-saifulaija.vercel.app/role/${email}`)
       const user = await response.json()
       return user?.role
 }
@@ -40,7 +40,7 @@ export const saveUser = user=>{
 
 
 export const updateData =(id)=>{
-      fetch(`http://localhost:5000/updated-two/${id}`,{
+      fetch(`https://assignment-server-12-saifulaija.vercel.app/updated-two/${id}`,{
             method:'PATCH'
       })
       .then(res=>res.json())

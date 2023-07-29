@@ -8,7 +8,7 @@ const MyClass = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/classes/${user?.email}`)
+    fetch(`https://assignment-server-12-saifulaija.vercel.app/classes/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

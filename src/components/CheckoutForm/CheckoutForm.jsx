@@ -21,7 +21,7 @@ const CheckoutForm = ({ paymentData }) => {
   useEffect(() => {
     if (paymentData?.price) {
       axios
-        .post("http://localhost:5000/create-payment-intent", {
+        .post("https://assignment-server-12-saifulaija.vercel.app/create-payment-intent", {
           price: paymentData?.price,
         })
         .then((res) => {
@@ -88,7 +88,7 @@ const CheckoutForm = ({ paymentData }) => {
           transactionId: paymentIntent.id,
           date: new Date(),
         };
-        fetch("http://localhost:5000/payment", {
+        fetch("https://assignment-server-12-saifulaija.vercel.app/payment", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -99,7 +99,7 @@ const CheckoutForm = ({ paymentData }) => {
           .then((data) => {
             if (data.insertedId) {
               // update booking status
-              fetch(`http://localhost:5000/payment/${paymentData._id}`, {
+              fetch(`https://assignment-server-12-saifulaija.vercel.app/payment/${paymentData._id}`, {
                 method: "PATCH",
               })
                 .then((res) => res.json())

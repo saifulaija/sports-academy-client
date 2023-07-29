@@ -20,7 +20,7 @@ const MySelectedClasses = () => {
   } = useQuery({
     queryKey: ["bookings", user?.email],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/bookings/${user?.email}`);
+      const res = await fetch(`https://assignment-server-12-saifulaija.vercel.app/bookings/${user?.email}`);
       return res.json();
     },
   });
@@ -29,7 +29,7 @@ const MySelectedClasses = () => {
   // setBookingClasses(remaining);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://assignment-server-12-saifulaija.vercel.app/bookings/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

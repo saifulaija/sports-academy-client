@@ -6,14 +6,14 @@ const ManageClasses = () => {
 
   
   const { data: classes = [], refetch } = useQuery(["classes"], async () => {
-    const res = await fetch("http://localhost:5000/classes");
+    const res = await fetch("https://assignment-server-12-saifulaija.vercel.app/classes");
     return res.json();
   });
   console.log(classes);
 // TODO Modal created for send feedback
     const handleApproved=id=>{
       console.log(id);
-      fetch(`http://localhost:5000/approved/${id}`,{
+      fetch(`https://assignment-server-12-saifulaija.vercel.app/approved/${id}`,{
             method:'PATCH',
       })
       .then(res=> res.json())
@@ -28,7 +28,7 @@ const ManageClasses = () => {
 
     const handleDeny=id=>{
       console.log(id);
-      fetch(`http://localhost:5000/deny/${id}`,{
+      fetch(`https://assignment-server-12-saifulaija.vercel.app/deny/${id}`,{
             method:'PATCH',
       })
       .then(res=> res.json())
