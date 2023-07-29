@@ -11,7 +11,7 @@ const Main = () => {
                   {/* <Navbar></Navbar> */}
                   <LatestNav></LatestNav>
                   
-                <div className="min-h[cal(100vh-68px)]">
+                <div className="min-h-[calc(100vh-190px)]">
                 <Outlet></Outlet>
                 </div>
                  <Footer></Footer> 
