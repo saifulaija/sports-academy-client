@@ -20,89 +20,100 @@ import MyPaymentHistory from "../Dashboard/UserMenu/MyPaymentHistory";
 import EnrolledClasses from "../Dashboard/UserMenu/EnrolledClasses";
 import Profile from "../components/Profile/Profile";
 
-
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <Error></Error>,
+    children: [
       {
-        path:'/',
-        element:<Main></Main>,
-        errorElement:<Error></Error>,
-        children:[
-            {
-                path:'/',
-                element:<Home></Home>
-            },
-            {
-              path:'login',
-              element:<Login></Login>
-            },
-            {
-              path:'register',
-              element:<Register></Register>
-            },
-            {
-              path:'teacher',
-              element:<Instructor></Instructor>
-            },
-            {
-              path:'all-classes',
-              element:<AllClasses></AllClasses>
-            }
-           
-        ]    
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path:'dashboard',
-        element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-        children:[
-          {
-            path:'add-users',
-            element:<Users></Users>
-          },
-          {
-            path:'add-form',
-            element:<AddClass></AddClass>
-          },
-          {
-            path:'manage-classes',
-            element:<ManageClasses></ManageClasses>
-          },
-          {
-            path:'feedback/:id',
-            element:<FeedBack></FeedBack>,
-            loader: ({params}) => fetch(`http://localhost:5000/feedback/${params.id}`)
-          },
-          {
-            path:'my-classes',
-            element:<MyClass></MyClass>
-          },
-          {
-            path:'update-class/:id',
-            element:<UpdateClass></UpdateClass>,
-            loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`)
-          },
-          {
-            path:'my-bookings',
-            element:<MySelectedClasses></MySelectedClasses>
-          },
-          {
-            path:'payment/:id',
-            element: <Payment></Payment>,
-            loader:({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
-          },
-          {
-            path:'payment-classes',
-            element: <MyPaymentHistory></MyPaymentHistory>
-          },
-          {
-            path:'enrolled-classes',
-            element:<EnrolledClasses></EnrolledClasses>
-          },
-          {
-            path:'profile',
-            element:<Profile></Profile>
-          }
-        ]
-      }
-])
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "teacher",
+        element: <Instructor></Instructor>,
+      },
+      {
+        path: "all-classes",
+        element: <AllClasses></AllClasses>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "add-users",
+        element: <Users></Users>,
+      },
+      {
+        path: "add-form",
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: "manage-classes",
+        element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: "feedback/:id",
+        element: <FeedBack></FeedBack>,
+        loader: ({ params }) =>
+          fetch(
+            ` https://assignment-server-12-saifulaija.vercel.app/feedback/${params.id}`
+          ),
+      },
+      {
+        path: "my-classes",
+        element: <MyClass></MyClass>,
+      },
+      {
+        path: "update-class/:id",
+        element: <UpdateClass></UpdateClass>,
+        loader: ({ params }) =>
+          fetch(
+            ` https://assignment-server-12-saifulaija.vercel.app/update/${params.id}`
+          ),
+      },
+      {
+        path: "my-bookings",
+        element: <MySelectedClasses></MySelectedClasses>,
+      },
+      {
+        path: "payment/:id",
+        element: <Payment></Payment>,
+        loader: ({ params }) =>
+          fetch(
+            ` https://assignment-server-12-saifulaija.vercel.app/payment/${params.id}`
+          ),
+      },
+      {
+        path: "payment-classes",
+        element: <MyPaymentHistory></MyPaymentHistory>,
+      },
+      {
+        path: "enrolled-classes",
+        element: <EnrolledClasses></EnrolledClasses>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
+    ],
+  },
+]);
 
-export default router
+export default router;
