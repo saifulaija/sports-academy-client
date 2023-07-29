@@ -18,7 +18,7 @@ const UserMenu = () => {
       >
         <AiFillFileAdd className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">My Selected Class</span>
+        <span className="mx-4 font-medium text-white">My Selected Class</span>
       </NavLink>
       <NavLink
         to="/dashboard/enrolled-classes"
@@ -30,7 +30,7 @@ const UserMenu = () => {
       >
         <AiOutlineSelect className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">My Enrolled Class</span>
+        <span className="mx-4 font-medium text-white">My Enrolled Class</span>
       </NavLink>
       <NavLink
         to="/dashboard/payment-classes"
@@ -42,7 +42,7 @@ const UserMenu = () => {
       >
         <MdOutlinePayment className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">Payment History</span>
+        <span className="mx-4 font-medium text-white">Payment History</span>
       </NavLink>
     </>
   );

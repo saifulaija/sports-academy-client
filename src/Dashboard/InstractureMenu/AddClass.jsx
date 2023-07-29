@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { addClass } from "../../api/classes";
 import { toast } from "react-hot-toast";
+import { FaAddressCard } from 'react-icons/fa';
+
+FaAddressCard
 
 const AddClass = () => {
   const { user } = useContext(AuthContext);
@@ -54,7 +57,7 @@ const AddClass = () => {
             Class Name
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
+           className="w-full px-4 py-3 text-gray-800 border border-[#ff6c2f] focus:outline-[#702c0f] rounded-md "
             name="name"
             id="location"
             type="text"
@@ -67,7 +70,7 @@ const AddClass = () => {
             Image URL
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
+           className="w-full px-4 py-3 text-gray-800 border border-[#ff6c2f] focus:outline-[#702c0f] rounded-md "
             name="photo"
             id="location"
             type="url"
@@ -81,7 +84,7 @@ const AddClass = () => {
           </label>
           <input
           
-            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
+          className="w-full px-4 py-3 text-gray-800 border border-[#ff6c2f] focus:outline-[#702c0f] rounded-md "
             name="seats"
             type="number"
             placeholder="Available seats"
@@ -105,16 +108,18 @@ const AddClass = () => {
             price
           </label>
           <input
-            className="w-full px-4 py-3 text-gray-800 border border-yellow-500 focus:outline-yellow-500 rounded-md "
+            className="w-full px-4 py-3 text-gray-800 border border-[#ff6c2f] focus:outline-[#702c0f] rounded-md "
             name="price"
             type="number"
             placeholder="price"
             required
           />
         </div>
-        <button className="btn-third" type="submit">
-          {" "}
-          Add Class
+        <button
+          className="bg-[#ff6c2f] px-4 py-1 rounded-lg text-white flex justify-center items-center  hover:bg-[#702c0f]"
+          type="submit"
+        >
+          <FaAddressCard className=" mr-1 inline-block" /> Update Class
         </button>
       </form>
     </div>

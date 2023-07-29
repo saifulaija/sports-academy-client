@@ -61,12 +61,12 @@ const Register = () => {
 
   return (
     <div className="w-full p-16">
-      <div className="md:flex justify-center border-[1px] border-yellow-500 rounded-lg shadow-xl rounded-lg gap-16 items-center py-16 max-w-[1280px] mx-auto">
+      <div className="md:flex justify-center border-[1px] border-[#ff6c2f] rounded-lg shadow-xl  gap-16 items-center py-16 max-w-[1280px] mx-auto">
         <div className="hidden md:block">
           <img className="rounded-md" src={loginImage} alt="" />
         </div>
         <div className="flex justify-center items-center min-h-[600px]">
-          <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#617453]  text-gray-900">
+          <div className="flex font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 border-[1px]  text-gray-900">
             <div className="mb-8 text-center">
               <h1 className="heading-st">Register Now</h1>
               <p className="text-sm text-gray-400">
@@ -88,7 +88,7 @@ const Register = () => {
                     type="text"
                     {...register("name", { required: true })}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
                 </div>
@@ -100,7 +100,7 @@ const Register = () => {
                     type="email"
                     {...register("email")}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
                 </div>
@@ -112,7 +112,7 @@ const Register = () => {
                   </div>
                   <input
                     type="password"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                     {...register("password", {
                       required: true,
                       minLength: 6,
@@ -148,7 +148,7 @@ const Register = () => {
                     type="password"
                     {...register("confirm")}
                     placeholder="*******"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                   />
                 </div>
                 <div>
@@ -161,7 +161,7 @@ const Register = () => {
                     type="url"
                     {...register("photoURL")}
                     placeholder="Photo URL"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                   />
                 </div>
               </div>
@@ -195,7 +195,7 @@ const Register = () => {
               Already have an account yet?{" "}
               <Link
                 to="/login"
-                className="hover:underline hover:text-rose-500 text-gray-600"
+                className="hover:underline hover:text-[#c4430d] text-[#ff6c2f]"
               >
                 Login
               </Link>

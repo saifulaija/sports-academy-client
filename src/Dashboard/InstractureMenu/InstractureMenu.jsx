@@ -15,7 +15,7 @@ const InstractureMenu = () => {
       >
         <AiFillFileAdd className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">Add a Class</span>
+        <span className="mx-4 font-medium text-white">Add a Class</span>
       </NavLink>
       <NavLink
         to="/dashboard/my-classes"
@@ -27,7 +27,7 @@ const InstractureMenu = () => {
       >
         <AiFillFileAdd className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">My Classes</span>
+        <span className="mx-4 font-medium text-white">My Classes</span>
       </NavLink>
     </>
   );

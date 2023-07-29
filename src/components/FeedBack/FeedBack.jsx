@@ -27,7 +27,7 @@ const FeedBack = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold uppercase text-center text-yellow-500">
+      <h2 className=" text-xl md:text-3xl font-bold uppercase text-center text-[#ff6c2f]">
         Write Your Feedback To Instructor
       </h2>
       <form onSubmit={handleSubmit} className="space-y-8">
@@ -37,7 +37,7 @@ const FeedBack = () => {
           </label>
 
           <textarea
-            className="block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-yellow-300 focus:outline-yellow-500 "
+            className="block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-[#008080] focus:outline-[#0b2727] "
             name="feedback"
           ></textarea>
         </div>

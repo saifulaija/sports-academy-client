@@ -135,7 +135,7 @@ const LatestNav = () => {
       ) : (
         <li>
           <NavLink
-            className="bg-[#ff6c2f] px-5 py-1 rounded-lg outline-none text-white font-medium hover:opacity-75"
+            className="bg-[#ff6c2f] px-4 py-1 rounded-full outline-none text-white font-medium hover:opacity-75"
             to="/login"
           >
             Login

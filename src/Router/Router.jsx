@@ -18,6 +18,7 @@ import MySelectedClasses from "../Dashboard/UserMenu/MySelectedClasses";
 import Payment from "../Pages/Payment/Payment";
 import MyPaymentHistory from "../Dashboard/UserMenu/MyPaymentHistory";
 import EnrolledClasses from "../Dashboard/UserMenu/EnrolledClasses";
+import Profile from "../components/Profile/Profile";
 
 
 const router = createBrowserRouter([
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
           {
             path:'enrolled-classes',
             element:<EnrolledClasses></EnrolledClasses>
+          },
+          {
+            path:'profile',
+            element:<Profile></Profile>
           }
         ]
       }

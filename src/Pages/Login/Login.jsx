@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
-import  loginImage from '../../../src/assets/new1jpg.jpg'
+
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -62,12 +62,9 @@ const Login = () => {
       <Helmet>
         <title>BD Sports Academy || Login</title>
       </Helmet>
-      <div className="md:flex justify-center gap-16 items-center border-[1px] border-yellow-500 shadow-xl rounded-lg p-6 max-w-[1280px] mx-auto">
-        <div className="hidden md:block">
-          <img className="drop-shadow-sm rounded-md" src={loginImage} alt="" />
-        </div>
+      <div >
         <div className="flex justify-center items-center min-h-screen">
-          <div className="flex uppercase font-abc flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#617453] text-gray-900">
+          <div className="flex bg-gray-50 drop-shadow-md border-[1px]  flex-col max-w-md p-6 rounded-md sm:p-10  text-gray-900">
             <div className="mb-8 text-center">
               <h1 className="heading-st">Login Now</h1>
               <p className="text-sm text-gray-400">
@@ -89,7 +86,7 @@ const Login = () => {
                     type="email"
                     {...register("email")}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
                 </div>
@@ -103,21 +100,18 @@ const Login = () => {
                     type={state ? "text" : "password"}
                     {...register("password")}
                     placeholder="Enter Your Email Here"
-                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-indigo-500 bg-gray-200 text-gray-900"
+                    className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ff6c2f] bg-gray-200 text-gray-900"
                     data-temp-mail-org="0"
                   />
                   <AiFillEyeInvisible
                     onClick={handleHideShow}
-                    className=" ml-80 top-[46px] absolute"
+                    className="  ml-60 md:ml-80 top-[40px] md:top-[46px] absolute"
                   ></AiFillEyeInvisible>
                 </div>
               </div>
 
               <div>
-                <button
-                  type="submit"
-                  className="btn-third"
-                >
+                <button type="submit" className="btn-third">
                   Signin Now
                 </button>
               </div>
@@ -142,7 +136,7 @@ const Login = () => {
               Don't have an account yet?
               <Link
                 to="/register"
-                className="hover:underline hover:text-blue-500 text-yellow-500"
+                className="hover:underline hover:text-[#64280e] text-[#ff6c2f]"
               >
                 Sign up
               </Link>

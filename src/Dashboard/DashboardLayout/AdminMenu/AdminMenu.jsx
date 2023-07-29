@@ -17,7 +17,7 @@ const AdminMenu = () => {
       >
         <AiOutlineUserSwitch className="w-6 h-6" />
 
-        <span className="mx-4 font-medium">Manage Users</span>
+        <span className="mx-4 font-medium text-white">Manage Users</span>
       </NavLink>
       <NavLink
         to="/dashboard/manage-classes"
@@ -29,7 +29,7 @@ const AdminMenu = () => {
       >
        <SiGoogleclassroom className="w-5 h-5" />
 
-       <span className="mx-4 font-medium">Manage Classes</span>
+       <span className="mx-4 font-medium text-white">Manage Classes</span>
       </NavLink>
 
      

@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { AiOutlineSelect } from "react-icons/ai";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import Loader from "../../components/Loader/Loader";
-import { Fade, Zoom } from "react-reveal";
+import {  Zoom } from "react-reveal";
 import { FaChair, FaDollarSign } from "react-icons/fa";
 const NewClassCard = ({ item }) => {
   const { photo, name, seats, price, _id } = item;
@@ -57,14 +57,15 @@ const NewClassCard = ({ item }) => {
       });
     }
   };
-
-  if (loading) {
+ 
+   const navigation = useNavigation()
+  if (navigation.state === "loading") {
     return <Loader></Loader>;
   }
 
   return (
     <Zoom>
-      <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 space-y-4">
+      <div className="border bg-neutral-50 border-gray-200 group rounded-lg shadow-md p-6 space-y-4">
         <div className="flex justify-center items-center h-40 rounded-lg overflow-hidden">
           <img
             src={photo}
@@ -74,7 +75,7 @@ const NewClassCard = ({ item }) => {
         </div>
         <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
         <p className="text-gray-600">Instructor: {item.instructor.name}</p>
-        <div className="flex justify-between items-center text-neutral-500">
+        <div className="flex justify-between items-center text-[#ff6c2f]">
           <p>
             <FaChair className="inline-block mr-1" />
             Seats: {seats}
@@ -88,7 +89,7 @@ const NewClassCard = ({ item }) => {
           <button
             onClick={() => selectButton(item)}
             disabled={seats <= 0 || role === "admin" || role === "instructor"}
-            className={`bg-[#008080] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 ${
+            className={`bg-[#ff6c2f] text-white px-5 py-1 rounded-full text-sm font-semibold hover:bg-[#70290b] ${
               seats <= 0 || role === "admin" || role === "instructor"
                 ? "opacity-50 cursor-not-allowed"
                 : ""

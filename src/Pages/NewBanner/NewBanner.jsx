@@ -1,159 +1,43 @@
-import img1 from "../../../src/assets/banner3.jpg";
-import img2 from "../../../src/assets/banner1.jpg";
-import img3 from "../../../src/assets/bannern3.jpg";
-import img4 from "../../../src/assets/bannern4.jpg";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
+ 
+import { AiOutlineSearch } from 'react-icons/ai';
+import { Fade } from 'react-reveal';
+import backgroundImage from '../../../src/assets/bannern4.jpg';
 
-const NewBanner = () => {
+const HeroSection = () => {
   return (
-    <div className="max-w-[1240px]  mx-auto p-8">
-      <div className="carousel">
-        <div id="slide1" className="carousel-item relative h-[90vh] w-full">
-          <img src={img1} className="w-full object-cover rounded-xl" />
-
-          <div className="absolute top-32 bottom-32 ml-10 flex items-center justify-center max-w-[700px] font-mono ">
-            <div>
-              <Fade top>
-                <h1 className="text-xl md:text-3xl font-bold font-mono text-yellow-500 ">
-                  Well Come To Sports Academy
-                </h1>
-              </Fade>
-              <Zoom>
-                <p className="text-neutral-200 my-4">
-                  A sports academy is an institution or facility that provides
-                  specialized training and coaching in various sports
-                  disciplines. These academies are designed to help athletes
-                  develop their skills, enhance their performance, and achieve
-                  their full potential in their chosen sport.
-                </p>
-                <button className="btn-third">
-                  {" "}
-                  <AiOutlineArrowLeft className="inline-block"></AiOutlineArrowLeft>{" "}
-                  Explore More
-                </button>
-              </Zoom>
-            </div>
-          </div>
-
-          <div className="absolute flex gap-2 bottom-5">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        {/* slide 2 */}
-        <div id="slide2" className="carousel-item relative h-[90vh] w-full">
-          <img src={img2} className="w-full object-cover rounded-xl" />
-          <div className="absolute top-32 bottom-32 ml-10 flex items-center justify-center max-w-[700px] font-mono ">
-            <div>
-              <Fade top>
-                <h1 className="text-xl md:text-3xl font-bold font-mono text-yellow-500 ">
-                  Authentic Information Provided
-                </h1>
-              </Fade>
-              <Zoom>
-                <p className="text-neutral-200 my-4">
-                  A sports academy is an institution or facility that provides
-                  specialized training and coaching in various sports
-                  disciplines. These academies are designed to help athletes
-                  develop their skills, enhance their performance, and achieve
-                  their full potential in their chosen sport.
-                </p>
-                <button className="btn-third">
-                  {" "}
-                  <AiOutlineArrowLeft className="inline-block"></AiOutlineArrowLeft>{" "}
-                  Explore More
-                </button>
-              </Zoom>
-            </div>
-          </div>
-          <div className="absolute flex gap-2 bottom-5">
-            <a href="#slide1" className="btn btn-circle text-neutral-800">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        {/* slide 3 */}
-        <div id="slide3" className="carousel-item relative h-[90vh] w-full">
-          <img src={img3} className="w-full object-cover rounded-xl" />
-         <div className="absolute top-32 bottom-32 ml-10 flex items-center justify-center max-w-[700px] font-mono ">
-            <div>
-              <Fade top>
-                <h1 className="text-xl md:text-3xl font-bold font-mono text-yellow-500 ">
-                 Reliable For Sports
-                </h1>
-              </Fade>
-              <Zoom>
-                <p className="text-neutral-200 my-4">
-                  A sports academy is an institution or facility that provides
-                  specialized training and coaching in various sports
-                  disciplines. These academies are designed to help athletes
-                  develop their skills, enhance their performance, and achieve
-                  their full potential in their chosen sport.
-                </p>
-                <button className="btn-third">
-                  {" "}
-                  <AiOutlineArrowLeft className="inline-block"></AiOutlineArrowLeft>{" "}
-                  Explore More
-                </button>
-              </Zoom>
-            </div>
-          </div> 
-          <div className="absolute flex gap-2 bottom-5">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        {/* slide four */}
-        <div id="slide4"  className="carousel-item relative h-[90vh] w-full">
-          <img src={img4} className="w-full object-cover rounded-xl" />
-          <div className="absolute top-32 bottom-32 ml-10 flex items-center justify-center max-w-[700px] font-mono ">
-            <div>
-              <Fade top>
-                <h1 className="text-xl md:text-3xl font-bold font-mono text-yellow-500 ">
-                  Background More Increasing
-                </h1>
-              </Fade>
-              <Zoom>
-                <p className="text-neutral-200 my-4">
-                  A sports academy is an institution or facility that provides
-                  specialized training and coaching in various sports
-                  disciplines. These academies are designed to help athletes
-                  develop their skills, enhance their performance, and achieve
-                  their full potential in their chosen sport.
-                </p>
-                <button className="btn-third">
-                  {" "}
-                  <AiOutlineArrowLeft className="inline-block"></AiOutlineArrowLeft>{" "}
-                  Explore More
-                </button>
-              </Zoom>
-            </div>
-          </div> 
-          <div className="absolute flex gap-2 bottom-5">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
+    <div
+      className="relative bg-gray-800 flex items-center justify-center overflow-hidden"
+      style={{ minHeight: '100vh' }}
+    >
+      <img
+        src={backgroundImage}
+        alt="Hero Background"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+      />
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+      <div className="text-center z-10 px-6 sm:px-12 md:px-24 lg:px-32 xl:px-40">
+        <Fade top>
+          <h1 className="text-4xl md:text-4xl font-bold text-white mb-4">Welcome to</h1>
+        </Fade>
+        <Fade top delay={300}>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#ff6c2f] mb-6">Sports Academy</h1>
+        </Fade>
+        <Fade top delay={600}>
+          <p className="text-xl md:text-2xl text-white mb-8">
+            Sports Academy is a popular students' academy of Bangladesh. It was established in the
+            year 2022 and has since become the first choice for students all over the country.
+          </p>
+        </Fade>
+        <Fade top delay={900}>
+          
+            <button className="bg-[#ff6c2f] hover:bg-[#502310] text-white px-6 py-1 rounded-md">
+              <AiOutlineSearch className='inline-block' /> Explore
+            </button>
+          
+        </Fade>
       </div>
     </div>
   );
 };
 
-export default NewBanner;
+export default HeroSection;

@@ -50,7 +50,7 @@ const ManageClasses = () => {
       <h3 className="heading-st">
         Total class:{classes.length}
       </h3>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         {classes.map((item) => (
           <ClassCard key={item._id} item={item} handleApproved={handleApproved} handleDeny={handleDeny}></ClassCard>
         ))}
