@@ -9,7 +9,7 @@
 //   const [classes, setClasses] = useState([]);
 
 //   useEffect(() => {
-//     fetch(`https://assignment-server-12-indol.vercel.app/classes/${user?.email}`)
+//     fetch(`http://localhost:5000/classes/${user?.email}`)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         console.log(data);
@@ -110,7 +110,7 @@
 
 //   useEffect(() => {
 //     fetch(
-//       `https://assignment-server-12-indol.vercel.app/classes/${user?.email}`
+//       `http://localhost:5000/classes/${user?.email}`
 //     )
 //       .then((res) => res.json())
 //       .then((data) => {
@@ -185,7 +185,7 @@ const MyClass = () => {
 
   useEffect(() => {
     fetch(
-      `https://assignment-server-12-indol.vercel.app/classes/${user?.email}`
+      `http://localhost:5000/classes/${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {

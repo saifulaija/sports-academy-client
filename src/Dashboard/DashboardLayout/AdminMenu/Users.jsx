@@ -15,7 +15,7 @@ const Users = () => {
   const [loading, setLoading] = useState(false)
 
   const { data: users = [], refetch, isLoading } = useQuery(['users'], async () => {
-    const res = await fetch('https://assignment-server-12-indol.vercel.app/users');
+    const res = await fetch('http://localhost:5000/users');
     return res.json();
   });
 
@@ -31,7 +31,7 @@ const Users = () => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const handleMakeAdmin = (item) => {
-    fetch(`https://assignment-server-12-indol.vercel.app/admin/${item._id}`, {
+    fetch(`http://localhost:5000/admin/${item._id}`, {
       method: 'PATCH',
     })
       .then((res) => res.json())
@@ -45,7 +45,7 @@ const Users = () => {
 
   const handleMakeInstructor = (item) => {
  
-    fetch(`https://assignment-server-12-indol.vercel.app/instructor/${item._id}`, {
+    fetch(`http://localhost:5000/instructor/${item._id}`, {
       method: 'PATCH',
     })
       .then((res) => res.json())

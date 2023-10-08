@@ -1,78 +1,88 @@
-import ceo from "../../../src/assets/director.jpg";
-import sub from "../../../src/assets/sub.jpg";
-import Heading from "../../Shared/Heading/Heading";
-import Fade from 'react-reveal/Fade';
-import { MdCheckCircle } from 'react-icons/md';
 
-const AboutUs = () => {
+import { FaTwitter, FaFacebook, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+
+const AboutUsPage = () => {
+  const teamMembers = [
+    {
+      name: 'John Doe',
+      role: 'Co-Founder & CEO',
+      email: 'john@example.com',
+      phone: '+123456789',
+      image: '/john-doe.jpg',
+    },
+    {
+      name: 'Jane Smith',
+      role: 'Co-Founder & CMO',
+      email: 'jane@example.com',
+      phone: '+987654321',
+      image: '/jane-smith.jpg',
+    },
+    {
+      name: 'Michael Johnson',
+      role: 'Marketing Manager',
+      email: 'michael@example.com',
+      phone: '+1122334455',
+      image: '/michael-johnson.jpg',
+    },
+  ];
+
   return (
-    <div className="w-full p-8 md:p-16">
-      <div className="max-w-[1280px] mx-auto text-justify bg-white rounded-lg shadow-lg p-8 md:p-16">
-        <div className="flex flex-col items-center pb-8">
-          <Heading
-            heading={"About Us"}
-            text={
-              "Welcome to Our Academy, the number one Summer Academy for students. Join us to unlock your potential and achieve greatness!"
-            }
-          />
+    <div className="bg-black text-white min-h-screen">
+      <div className="container mx-auto py-16">
+        <div className="text-center">
+          <h1 className="text-4xl font-semibold">About Spots Academy</h1>
+          <p className="text-lg">Your Trusted Source for Quality Sports Equipment</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="relative">
-            <Fade>
-              <img
-                className="object-cover rounded-xl h-72 w-full"
-                src={ceo}
-                alt="CEO"
-              />
-            </Fade>
-            <Fade>
-              <img
-                className="absolute hidden md:block bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white shadow-lg"
-                width={140}
-                src={sub}
-                alt="Sub"
-              />
-            </Fade>
+
+        <section className="my-8">
+          <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
+          <p className="text-gray-300">
+            Founded in 20XX, Spots Academy is a leading sports equipment retailer dedicated to enhancing your athletic performance. We offer a wide range of top-quality products to help you reach your full potential in sports and fitness.
+          </p>
+        </section>
+
+        <section className="my-8">
+          <h2 className="text-2xl font-semibold mb-4">Meet Our Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
+                <img src={member.image} alt={member.name} className="rounded-full w-24 h-24 mx-auto mb-3" />
+                <h3 className="text-xl font-semibold">{member.name}</h3>
+                <p className="text-gray-600">{member.role}</p>
+                <div className="flex justify-center mt-4">
+                  <a href={`mailto:${member.email}`} className="text-black hover:underline">
+                    <FaEnvelope />
+                  </a>
+                  <a href={`tel:${member.phone}`} className="text-black hover:underline ml-4">
+                    <FaPhone />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="space-y-6">
-            <Fade>
-              <div>
-                <h3 className="text-2xl font-semibold flex items-center">
-                  <MdCheckCircle className="mr-4 text-yellow-600" />
-                  Our Mission
-                </h3>
-                <p className="text-gray-800 text-md leading-relaxed">
-                  Our mission is to provide a unique and transformative Summer Academy experience for students. We focus on specific subjects and skill development, empowering participants to explore their passions and unlock their potential.
-                </p>
-              </div>
-            </Fade>
-            <Fade>
-              <div>
-                <h3 className="text-2xl font-semibold flex items-center">
-                  <MdCheckCircle className="mr-4 text-yellow-600" />
-                  Our Vision
-                </h3>
-                <p className="text-gray-800 text-md leading-relaxed">
-                  Our vision is to be the catalyst for personal growth and success. We aim to nurture well-rounded individuals who embrace lifelong learning, excel academically, and make positive contributions to their communities.
-                </p>
-              </div>
-            </Fade>
-            <Fade>
-              <div>
-                <h3 className="text-2xl font-semibold flex items-center">
-                  <MdCheckCircle className="mr-4 text-yellow-600" />
-                  Our Principles
-                </h3>
-                <p className="text-gray-800 text-md leading-relaxed">
-                  Our principles are based on excellence, innovation, inclusivity, and fostering a love for learning. As a principal of Our Academy, we ensure a safe and nurturing environment for all students, providing strategic leadership and collaborative learning opportunities.
-                </p>
-              </div>
-            </Fade>
-          </div>
+        </section>
+
+        <section className="my-8">
+          <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
+          <p className="text-gray-300">
+            Our mission is to equip athletes with the best sports gear, ensuring they perform at their best. We're committed to providing outstanding customer service and helping you achieve your sporting goals.
+          </p>
+        </section>
+
+        <div className="flex justify-center space-x-4 mt-8">
+          <a href="#" className="text-black hover:text-gray-500" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-2xl" />
+          </a>
+          <a href="#" className="text-black hover:text-gray-500" target="_blank" rel="noopener noreferrer">
+            <FaFacebook className="text-2xl" />
+          </a>
+          <a href="#" className="text-black hover:text-gray-500" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="text-2xl" />
+          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export default AboutUs;
+export default AboutUsPage;

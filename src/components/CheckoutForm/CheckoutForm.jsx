@@ -17,7 +17,7 @@ const CheckoutForm = ({ paymentData }) => {
   useEffect(() => {
     if (paymentData?.price) {
       axios
-        .post("https://assignment-12-new-firebase.web.app/create-payment-intent", {
+        .post("http://localhost:5000/create-payment-intent", {
           price: paymentData?.price,
         })
         .then((res) => {

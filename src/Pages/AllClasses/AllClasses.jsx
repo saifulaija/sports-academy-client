@@ -9,7 +9,7 @@ const AllClasses = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   useEffect(() => {
-    axios.get("https://assignment-server-12-indol.vercel.app/all-classes").then((response) => {
+    axios.get("http://localhost:5000/all-classes").then((response) => {
       setAllClass(response.data);
     });
   }, []);

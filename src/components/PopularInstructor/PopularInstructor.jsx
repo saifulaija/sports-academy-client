@@ -7,7 +7,7 @@ const PopularInstructor = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("https://assignment-server-12-indol.vercel.app/instructors")
+    fetch("http://localhost:5000/instructors")
       .then((res) => res.json())
       .then((data) => {
         setInstructors(data);
@@ -18,9 +18,10 @@ const PopularInstructor = () => {
     <div>
       <div className="flex justify-center">
         <Heading
-          heading={"popular Instructor"}
-          text={"Here most popular six Instructor all over the world"}
-        ></Heading>
+         
+        >
+          Popular Instructors
+        </Heading>
       </div>
 
       <div className="w-full p-16">
