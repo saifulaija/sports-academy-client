@@ -12,6 +12,7 @@ import EmptyState from "../../Shared/EmptyState/EmptyState";
 
 const MySelectedClasses = () => {
   const { user } = useContext(AuthContext);
+  console.log(user?.email);
 
   const {
     isLoading,
@@ -20,7 +21,7 @@ const MySelectedClasses = () => {
   } = useQuery({
     queryKey: ["bookings", user?.email],
     queryFn: async () => {
-      const res = await fetch(`https://assignment-server-12-saifulaija.vercel.app/bookings/${user?.email}`);
+      const res = await fetch(`https://assignment-server-12-indol.vercel.app/bookings/${user?.email}`);
       return res.json();
     },
   });
@@ -29,7 +30,7 @@ const MySelectedClasses = () => {
   // setBookingClasses(remaining);
 
   const handleDelete = (id) => {
-    fetch(`https://assignment-server-12-saifulaija.vercel.app/bookings/${id}`, {
+    fetch(`https://assignment-server-12-indol.vercel.app/bookings/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

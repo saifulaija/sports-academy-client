@@ -35,7 +35,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        console.log(err.message);
+        toast.error(err.message);
       });
   };
 

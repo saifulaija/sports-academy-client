@@ -5,7 +5,7 @@ import { FcSportsMode } from "react-icons/fc";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#008080] py-8 text-white">
+    <footer className="bg-gray-600 py-8 text-white">
       <div className="container mx-auto px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-center space-x-4">

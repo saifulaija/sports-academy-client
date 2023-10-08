@@ -73,9 +73,10 @@ const router = createBrowserRouter([
         element: <FeedBack></FeedBack>,
         loader: ({ params }) =>
           fetch(
-            ` https://assignment-server-12-saifulaija.vercel.app/feedback/${params.id}`
+            ` https://assignment-server-12-indol.vercel.app/feedback/${params.id}`
           ),
       },
+
       {
         path: "my-classes",
         element: <MyClass></MyClass>,
@@ -85,7 +86,7 @@ const router = createBrowserRouter([
         element: <UpdateClass></UpdateClass>,
         loader: ({ params }) =>
           fetch(
-            ` https://assignment-server-12-saifulaija.vercel.app/update/${params.id}`
+            ` https://assignment-server-12-indol.vercel.app/update/${params.id}`
           ),
       },
       {
@@ -97,7 +98,7 @@ const router = createBrowserRouter([
         element: <Payment></Payment>,
         loader: ({ params }) =>
           fetch(
-            ` https://assignment-server-12-saifulaija.vercel.app/payment/${params.id}`
+            ` https://assignment-server-12-indol.vercel.app/payment/${params.id}`
           ),
       },
       {

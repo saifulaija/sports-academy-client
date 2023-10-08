@@ -11,7 +11,7 @@ const EnrolledClasses = () => {
 
   const [paymentClasses, setPaymentClasses] = useState([]);
 
-  fetch(`https://assignment-server-12-saifulaija.vercel.app/payment-all/${user?.email}`)
+  fetch(`https://assignment-server-12-indol.vercel.app/payment-all/${user?.email}`)
     .then((res) => res.json())
     .then((data) => {
       setPaymentClasses(data);

@@ -1,21 +1,17 @@
-import { FcSportsMode } from "react-icons/fc";
+import React from "react";
 
-
-const Heading = ({heading, text}) => {
+const SectionHeading = ({ children }) => {
   return (
-    <div className="flex justify-center items-center  text-neutral-500 max-w-[600px]">
-      <div>
-        <h3 className="text-sm text-center md:text-3xl uppercase md:tracking-widest  font-bold text-[#ff6c2f]">
-         {heading}
-        </h3>
-        <div className="divider text-6xl"><FcSportsMode></FcSportsMode></div>
-        <p className="text-center">
-          {text}
-         
-        </p>
-      </div>
+    <div className="flex items-center">
+      <div className=" hidden md:block w-4 h-4 bg-red-500 rounded-full mr-2"></div>
+      <div className="  hidden md:block w-4 h-4 bg-green-500 rounded-full mx-2"></div>
+      <div className="  hidden md:block w-4 h-4 bg-blue-500 rounded-full mx-2"></div>
+      <h2 className="text-xl font-semibold text-gray-800">{children}</h2>
+      <div className="  hidden md:block w-4 h-4 bg-blue-500 rounded-full mx-2"></div>
+      <div className="  hidden md:block w-4 h-4 bg-green-500 rounded-full mx-2"></div>
+      <div className=" hidden md:block w-4 h-4 bg-red-500 rounded-full ml-2"></div>
     </div>
   );
 };
 
-export default Heading;
+export default SectionHeading;

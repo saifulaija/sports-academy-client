@@ -1,40 +1,73 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
+// import { AiOutlineUserSwitch } from "react-icons/ai";
+// import { SiGoogleclassroom } from "react-icons/si";
+
+// const AdminMenu = () => {
+//   return (
+//     <>
+      
+//      <div>
+//      <NavLink
+//         to="/dashboard/add-users"
+//         className={({ isActive }) =>
+//           `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+//             isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
+//           }`
+//         }
+//       >
+//         <AiOutlineUserSwitch className="w-6 h-6 text-gray-500" />
+
+//         <span className="mx-4 font-medium text-gray-500">Manage Users</span>
+//       </NavLink>
+//       <NavLink
+//         to="/dashboard/manage-classes"
+//         className={({ isActive }) =>
+//           `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+//             isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
+//           }`
+//         }
+//       >
+//        <SiGoogleclassroom className="w-5 h-5" />
+
+//        <span className="mx-4 font-medium text-gray-500">Manage Classes</span>
+//       </NavLink>
+//      </div>
+
+     
+//     </>
+//   );
+// };
+
+// export default AdminMenu;
+
+
+import { NavLink } from "react-router-dom";
 import { AiOutlineUserSwitch } from "react-icons/ai";
 import { SiGoogleclassroom } from "react-icons/si";
-import {BiHomeSmile} from "react-icons/bi";
+
 const AdminMenu = () => {
   return (
-    <>
-      
+    <div>
       <NavLink
         to="/dashboard/add-users"
-        className={({ isActive }) =>
-          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-            isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-          }`
-        }
+        className="flex items-center px-4 py-2 mt-5 transition-transform duration-300 hover:bg-gray-200 hover:text-gray-700 text-gray-600"
+        activeClassName="bg-gray-200 text-gray-700"
       >
-        <AiOutlineUserSwitch className="w-6 h-6" />
-
-        <span className="mx-4 font-medium text-white">Manage Users</span>
+        <AiOutlineUserSwitch className="w-6 h-6 text-gray-500" />
+        <span className="mx-4 font-medium">Manage Users</span>
       </NavLink>
       <NavLink
         to="/dashboard/manage-classes"
-        className={({ isActive }) =>
-          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-            isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-          }`
-        }
+        className="flex items-center px-4 py-2 mt-5 transition-transform duration-300 hover:bg-gray-200 hover:text-gray-700 text-gray-600"
+        activeClassName="bg-gray-200 text-gray-700"
       >
-       <SiGoogleclassroom className="w-5 h-5" />
-
-       <span className="mx-4 font-medium text-white">Manage Classes</span>
+        <SiGoogleclassroom className="w-5 h-5" />
+        <span className="mx-4 font-medium">Manage Classes</span>
       </NavLink>
-
-     
-    </>
+    </div>
   );
 };
 
 export default AdminMenu;
+

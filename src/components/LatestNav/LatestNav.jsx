@@ -47,7 +47,7 @@ const LatestNav = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-green-500 underline" : " text-white"
+            isActive ? "text-green-500 underline" : " text-gray-600"
           }
         >
           Home
@@ -56,7 +56,7 @@ const LatestNav = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 underline" : " text-white"
+            isActive ? "text-green-500 underline" : " text-gray-600"
           }
           to="/teacher"
         >
@@ -66,7 +66,7 @@ const LatestNav = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 underline" : " text-white"
+            isActive ? "text-green-500 underline" : " text-gray-600"
           }
           to="/all-classes"
         >
@@ -84,7 +84,7 @@ const LatestNav = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-on  fill-current w-6 h-6 text-white"
+            className="swap-on  fill-current w-6 h-6 text-gray-600"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -93,7 +93,7 @@ const LatestNav = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-off fill-current w-6 h-6 text-white"
+            className="swap-off fill-current w-6 h-6 text-gray-600"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -106,7 +106,7 @@ const LatestNav = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "text-green-500 underline" : " text-white"
+                isActive ? "text-green-500 underline" : " text-gray-600"
               }
               to="/dashboard"
             >
@@ -125,7 +125,7 @@ const LatestNav = () => {
           <li>
             <NavLink
               onClick={handleLogout}
-              className="bg-[#ff6c2f] px-5 py-1 rounded-lg outline-none text-white font-medium hover:opacity-75"
+              className=" border border-black px-4 py-1 rounded text-gray-600 font-medium hover:opacity-75"
               to="/login"
             >
               Logout
@@ -135,7 +135,7 @@ const LatestNav = () => {
       ) : (
         <li>
           <NavLink
-            className="bg-[#ff6c2f] px-4 py-1 rounded-full outline-none text-white font-medium hover:opacity-75"
+           className=" border border-black px-4 py-1 rounded text-gray-600 font-medium hover:opacity-75"
             to="/login"
           >
             Login
@@ -146,16 +146,16 @@ const LatestNav = () => {
   );
 
   return (
-    <nav className="bg-[#008080]  p-6  sticky top-0 z-50">
+    <nav className="bg-slate-100 border  p-6  sticky top-0 z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <NavLink
               to="/"
-              className="text-white text-xl font-bold flex items-center"
+              className="text-gray-600 text-xl font-bold flex items-center"
             >
-              <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-              Sports Academy
+              <FcSportsMode className="text-gray-600 text-[40px] "></FcSportsMode>
+             <span className="text-gray-300">Sports</span> Academy
             </NavLink>
           </div>
 
@@ -177,7 +177,7 @@ const LatestNav = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="mt-2 md:hidden rounded-lg shadow-lg">
-            <ul className="bg-[#1e3d3d] rounded-lg p-4">{navItem}</ul>
+            <ul className="bg-slate-200 rounded-lg p-4">{navItem}</ul>
           </div>
         )}
       </div>
