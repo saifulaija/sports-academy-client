@@ -216,7 +216,7 @@ const MyClass = () => {
                 {/* head */}
                 <thead className="text-lg text-neutral-500">
                   <tr>
-                    <th>#</th>
+                    <th>Serian No.</th>
                     <th>Class Name</th>
                     <th>Status</th>
                     <th>Enrolled Students</th>

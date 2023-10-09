@@ -8,21 +8,21 @@ const AboutUsPage = () => {
       role: 'Co-Founder & CEO',
       email: 'john@example.com',
       phone: '+123456789',
-      image: '/john-doe.jpg',
+      image: 'https://i.ibb.co/8YQyW6K/md.jpg',
     },
     {
       name: 'Jane Smith',
       role: 'Co-Founder & CMO',
       email: 'jane@example.com',
       phone: '+987654321',
-      image: '/jane-smith.jpg',
+      image: 'https://i.ibb.co/NsxZ3BP/md1.jpg',
     },
     {
       name: 'Michael Johnson',
       role: 'Marketing Manager',
       email: 'michael@example.com',
       phone: '+1122334455',
-      image: '/michael-johnson.jpg',
+      image: 'https://i.ibb.co/zNZ0VMz/md2.jpg',
     },
   ];
 
@@ -45,15 +45,15 @@ const AboutUsPage = () => {
           <h2 className="text-2xl font-semibold mb-4">Meet Our Team</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
+              <div key={index} className=" border p-4 rounded-lg shadow-md text-center">
                 <img src={member.image} alt={member.name} className="rounded-full w-24 h-24 mx-auto mb-3" />
                 <h3 className="text-xl font-semibold">{member.name}</h3>
                 <p className="text-gray-600">{member.role}</p>
                 <div className="flex justify-center mt-4">
-                  <a href={`mailto:${member.email}`} className="text-black hover:underline">
+                  <a href={`mailto:${member.email}`} className="text-white hover:underline">
                     <FaEnvelope />
                   </a>
-                  <a href={`tel:${member.phone}`} className="text-black hover:underline ml-4">
+                  <a href={`tel:${member.phone}`} className="text-white hover:underline ml-4">
                     <FaPhone />
                   </a>
                 </div>
@@ -69,17 +69,7 @@ const AboutUsPage = () => {
           </p>
         </section>
 
-        <div className="flex justify-center space-x-4 mt-8">
-          <a href="#" className="text-black hover:text-gray-500" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="text-2xl" />
-          </a>
-          <a href="#" className="text-black hover:text-gray-500" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="text-2xl" />
-          </a>
-          <a href="#" className="text-black hover:text-gray-500" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="text-2xl" />
-          </a>
-        </div>
+      
       </div>
     </div>
   );

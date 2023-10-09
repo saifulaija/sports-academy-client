@@ -23,12 +23,12 @@
 //       paymentClasses.length > 0 ? (
 //         <div className="w-full text-neutral-500 p-16">
 //           <div className="">
-//             <h3 className="text-3xl font-mono font-bold uppercase text-center text-yellow-400">
+//             <h3 className="text-3xl font- font-bold uppercase text-center text-yellow-400">
 //               Total Booking Classes : {paymentClasses.length}
 //             </h3>
 //           </div>
 //           <div className=" mx-auto p-10 flex justify-center items-center ">
-//             <div className="overflow-x-auto w-full font-mono mx-auto ">
+//             <div className="overflow-x-auto w-full font- mx-auto ">
 //               <Fade top>
 //                 <table className="table text-neutral-500">
 //                   {/* head */}
@@ -113,12 +113,12 @@ const EnrolledClasses = () => {
         paymentClasses.length > 0 ? (
         <div className="w-full text-neutral-500 p-16">
           <div className="">
-            <h3 className="text-3xl font-mono font-bold uppercase text-center text-gray-500">
+            <h3 className="text-3xl  font-bold uppercase text-center text-gray-500">
               Total Booking Classes : {paymentClasses.length}
             </h3>
           </div>
           <div className=" mx-auto p-10 flex justify-center items-center ">
-            <div className="overflow-x-auto w-full font-mono mx-auto ">
+            <div className="overflow-x-auto w-full  mx-auto ">
               <Fade top>
                 <table className="table text-neutral-500">
                   {/* head */}
@@ -140,7 +140,7 @@ const EnrolledClasses = () => {
                               <div className="mask mask-squircle w-12 h-12">
                                 <img
                                   src={item.photo}
-                                  alt="Avatar Tailwind CSS Component"
+                                  alt="Avatar"
                                 />
                               </div>
                             </div>

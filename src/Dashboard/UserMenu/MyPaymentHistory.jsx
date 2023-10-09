@@ -99,14 +99,14 @@ const MyPaymentHistory = () => {
           <h3 className="heading-st">
             Total Payment Classes : {paymentClasses.length}
           </h3>
-          <div className="font-mono">
+          <div>
             <div className="overflow-x-auto">
               <Fade bottom>
                 <table className="table">
                   {/* head */}
                   <thead className="text-lg">
                     <tr>
-                      <th>#</th>
+                      <th>Serial No.</th>
                       <th>Class Name</th>
                       <th>Transaction Id</th>
                       <th>Payment Date</th>

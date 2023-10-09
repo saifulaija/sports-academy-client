@@ -46,8 +46,8 @@ const AllClasses = () => {
           {pageNumbers.map((pageNumber) => (
             <button
               key={pageNumber}
-              className={`px-4 py-1 rounded-md cursor-pointer ${
-                currentPage === pageNumber ? "bg-[#008080] text-white" : "bg-gray-200  hover:bg-[#055555]"
+              className={`px-4 py-1 rounded cursor-pointer ${
+                currentPage === pageNumber ? "bg-black text-white" : "bg-gray-200  hover:bg-black"
               }`}
               onClick={() => handlePageChange(pageNumber)}
             >

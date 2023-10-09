@@ -78,7 +78,7 @@ const MySelectedClasses = () => {
               <td>
                 <button
                   onClick={() => handleDelete(item._id)}
-                  className="btn-third"
+                  className="btn-fourth"
                 >
                   <TiDocumentDelete className="inline-block"></TiDocumentDelete>{" "}
                   Delete
@@ -87,7 +87,7 @@ const MySelectedClasses = () => {
               <td>
                 <Link to={`/dashboard/payment/${item._id}`}>
                   {" "}
-                  <button className="btn-third">
+                  <button className="btn-fourth">
                     {" "}
                     <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
                     Pay

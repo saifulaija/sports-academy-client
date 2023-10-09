@@ -33,19 +33,19 @@ const Instructor = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentInstructors.map((item, index) => (
             <Fade key={item._id} delay={index * 100}>
-            <div className="bg-blue-50 rounded-lg shadow-md p-6 flex flex-col items-center transition-transform transform hover:scale-105">
-              <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-[#008080]">
+            <div className="bg-slate-50 rounded border p-6 flex flex-col items-center transition-transform transform hover:scale-105">
+              <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-gray-900">
                 <img
                   src={item.image}
                   alt="Avatar"
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-[#008080] mb-2">
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">
                 {item.name}
               </h2>
               <p className="text-gray-600 text-sm">
-                <FaEnvelope className="inline-block mr-2 text-[#008080]" />
+                <FaEnvelope className="inline-block mr-2 text-gray-900" />
                 {item.email}
               </p>
             </div>
@@ -56,8 +56,8 @@ const Instructor = () => {
           {pageNumbers.map((pageNumber) => (
             <button
               key={pageNumber}
-              className={`px-4 py-1 rounded-md cursor-pointer ${
-                currentPage === pageNumber ? "bg-[#008080] text-white" : "bg-gray-200 hover:bg-gray-300"
+              className={`px-4 py-1 rounded cursor-pointer ${
+                currentPage === pageNumber ? "bg-gray-900 text-white" : "bg-gray-200 hover:bg-gray-300"
               }`}
               onClick={() => handlePageChange(pageNumber)}
             >

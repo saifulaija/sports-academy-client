@@ -125,7 +125,7 @@ const LatestNav = () => {
           <li>
             <NavLink
               onClick={handleLogout}
-              className=" border border-black px-4 py-1 rounded text-gray-600 font-medium hover:opacity-75"
+              className="btn-fourth"
               to="/login"
             >
               Logout

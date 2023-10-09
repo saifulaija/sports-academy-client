@@ -19,6 +19,12 @@ import Payment from "../Pages/Payment/Payment";
 import MyPaymentHistory from "../Dashboard/UserMenu/MyPaymentHistory";
 import EnrolledClasses from "../Dashboard/UserMenu/EnrolledClasses";
 import Profile from "../components/Profile/Profile";
+import DashboardAdmin from "../Pages/DashboardAdmin/DashboardAdmin";
+import DashboardStudent from "../Pages/DashboardStudent/DashboardStudent";
+import DashboardInstructor from "../Pages/DashboardInstructor/DashboardInstructor";
+import AdminProfile from "../components/AdminProfile/AdminProfile";
+import InstructorProfile from "../components/InstructorProfile/InstructorProfile";
+import UserProfile from "../components/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +67,30 @@ const router = createBrowserRouter([
         element: <Users></Users>,
       },
       {
+        path: "admin-home",
+        element: <DashboardAdmin></DashboardAdmin>,
+      },
+      {
+        path: "user-home",
+        element: <DashboardStudent></DashboardStudent>,
+      },
+      {
+        path: "instructor-home",
+        element: <DashboardInstructor></DashboardInstructor>,
+      },
+      {
+        path:'admin-profile',
+        element:<AdminProfile></AdminProfile>
+      },
+      {
+        path:'instructor-profile',
+        element:<InstructorProfile></InstructorProfile>
+      },
+      {
+        path:'user-profile',
+        element:<UserProfile></UserProfile>
+      },
+      {
         path: "add-form",
         element: <AddClass></AddClass>,
       },
@@ -73,7 +103,7 @@ const router = createBrowserRouter([
         element: <FeedBack></FeedBack>,
         loader: ({ params }) =>
           fetch(
-            ` http://localhost:5000/feedback/${params.id}`
+            ` https://assignment-server-12-saifulaija.vercel.app/feedback/${params.id}`
           ),
       },
 
@@ -86,7 +116,7 @@ const router = createBrowserRouter([
         element: <UpdateClass></UpdateClass>,
         loader: ({ params }) =>
           fetch(
-            ` http://localhost:5000/update/${params.id}`
+            ` https://assignment-server-12-saifulaija.vercel.app/update/${params.id}`
           ),
       },
       {
@@ -98,7 +128,7 @@ const router = createBrowserRouter([
         element: <Payment></Payment>,
         loader: ({ params }) =>
           fetch(
-            ` http://localhost:5000/payment/${params.id}`
+            ` https://assignment-server-12-saifulaija.vercel.app/payment/${params.id}`
           ),
       },
       {

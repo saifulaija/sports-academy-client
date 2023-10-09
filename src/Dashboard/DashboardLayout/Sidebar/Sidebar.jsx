@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 
 import { GrLogout, GrUserAdmin } from "react-icons/gr";
 
 import { AiOutlineBars, AiOutlineHome } from "react-icons/ai";
 import { FcSportsMode } from "react-icons/fc";
-import { BsFillHouseAddFill } from "react-icons/bs";
+
 import { AuthContext } from "../../../Providers/AuthProvider";
 import AdminMenu from "../AdminMenu/AdminMenu";
 import InstractureMenu from "../../InstractureMenu/InstractureMenu";
@@ -73,9 +73,9 @@ const Sidebar = () => {
           <GrUserAdmin className="inline-block text-gray-500 text-md" />{" "}
           {role ? role : "Student"}
         </span>
-        <Link to="/dashboard/profile" className="block mt-2 font-medium text-gray-500 hover:underline">
+        <h2 to="/dashboard/profile" className="block mt-2 font-medium text-gray-800 ">
           Name: {user?.displayName}
-        </Link>
+        </h2>
       </div>
     </div>
 

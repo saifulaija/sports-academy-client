@@ -89,7 +89,7 @@ const NewClassCard = ({ item }) => {
           <button
             onClick={() => selectButton(item)}
             disabled={seats <= 0 || role === "admin" || role === "instructor"}
-            className={`bg-[#ff6c2f] text-white px-5 py-1 rounded-full text-sm font-semibold hover:bg-[#70290b] ${
+            className={`btn-fourth ${
               seats <= 0 || role === "admin" || role === "instructor"
                 ? "opacity-50 cursor-not-allowed"
                 : ""

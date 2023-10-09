@@ -84,7 +84,7 @@ const Users = () => {
                   className={`${
                     item.role === 'instructor'
                       ? 'bg-gray-300 cursor-not-allowed'
-                      : 'bg-black hover:bg-gray-700'
+                      : 'btn-fourth'
                   } px-2 py-1 rounded text-white`}
                 >
                   <AiOutlineUserAdd className="inline-block mr-1" />
@@ -96,7 +96,7 @@ const Users = () => {
                   className={`${
                     item.role === 'admin'
                       ? 'bg-gray-300 cursor-not-allowed'
-                      : 'bg-black hover:bg-gray-700'
+                      : 'btn-fourth'
                   } px-2 py-1 rounded text-white`}
                 >
                   <AiOutlineCrown className="mr-1 inline-block" />

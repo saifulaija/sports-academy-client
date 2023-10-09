@@ -1,11 +1,11 @@
 
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FcSportsMode } from "react-icons/fc";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-600 py-8 text-white">
+    <footer className="bg-gray-900 py-8 text-white">
       <div className="container mx-auto px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-center space-x-4">
@@ -23,14 +23,14 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex justify-center md:justify-end items-center space-x-4">
-            <a href="#">
+            <a href="https://web.facebook.com/sobuj.sorker.3">
               <FaFacebook className="text-xl" />
             </a>
-            <a href="#">
-              <FaTwitter className="text-xl" />
+            <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/saiful87//?_l=en_US">
+              <FaLinkedin className="text-xl" />
             </a>
-            <a href="#">
-              <FaInstagram className="text-xl" />
+            <a href="https://github.com/saifulaija">
+              <FaGithub className="text-xl" />
             </a>
           </div>
         </div>
