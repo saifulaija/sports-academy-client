@@ -5,7 +5,8 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
-import { FcSportsMode } from "react-icons/fc";
+// import { FcSportsMode } from "react-icons/fc";
+import logo from '../../../src/assets/academy1.png'
 
 const LatestNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -154,7 +155,8 @@ const LatestNav = () => {
               to="/"
               className="text-gray-600 text-xl font-bold flex items-center"
             >
-              <FcSportsMode className="text-gray-600 text-[40px] "></FcSportsMode>
+              {/* <FcSportsMode className="text-gray-600 text-[40px] "></FcSportsMode> */}
+              <img width={35} height={35} src={logo} alt="logo" />
              <span className="text-gray-300">Sports</span> Academy
             </NavLink>
           </div>

@@ -2,6 +2,7 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FcSportsMode } from "react-icons/fc";
+import logo from '../../assets/academy1.png'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="container mx-auto px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-center space-x-4">
-          <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
+          <img src={logo} width={35} height={35} alt="" />
             <h1 className="text-xl md:text-2xl font-bold">Sports Academy</h1>
           </div>
           <div className="md:flex justify-center items-center">

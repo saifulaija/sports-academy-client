@@ -11,6 +11,7 @@ import AdminMenu from "../AdminMenu/AdminMenu";
 import InstractureMenu from "../../InstractureMenu/InstractureMenu";
 import UserMenu from "../../UserMenu/UserMenu";
 import { Helmet } from "react-helmet-async";
+import logo from '../../../assets/academy1.png'
 const Sidebar = () => {
   const navigate = useNavigate();
 
@@ -62,7 +63,7 @@ const Sidebar = () => {
           <div className="flex flex-col items-center text-neutral-500 font-semibold">
       <div className="w-full hidden md:flex py-2 justify-center items-center mx-auto">
         <div className="flex items-center">
-          <FcSportsMode className="text-gray-500 text-4xl" />
+          <img src={logo} width={30} height={30} alt="" />
           <h1 className="text-gray-500 font-serif uppercase tracking-wider text-sm">
             BD Sport Academy
           </h1>

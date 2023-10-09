@@ -24,7 +24,7 @@ const PopularClasses = () => {
   }
 
   return (
-    <div className="w-full p-16">
+    <div className="w-full p-10">
       <div className="max-w-[1280px] mx-auto">
         <div className="flex justify-center items-center">
           

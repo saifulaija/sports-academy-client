@@ -17,11 +17,7 @@ const PopularInstructor = () => {
   return (
     <div>
       <div className="flex justify-center p-6">
-        <Heading
-         
-        >
-          Popular Instructors
-        </Heading>
+        <Heading className='p-10'>Popular Instructors</Heading>
       </div>
 
       <div className="w-full p-16">
