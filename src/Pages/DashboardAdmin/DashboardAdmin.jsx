@@ -93,19 +93,19 @@ const DashboardAdmin = () => {
   useEffect(() => {
     const fetchData = async () => {
       const usersResponse = await fetch(
-        "http://localhost:5000/users"
+        "https://assignment-server-12-indol.vercel.app/users"
       );
       const usersData = await usersResponse.json();
       setTotalUsers(usersData.length);
 
       const instructorsResponse = await fetch(
-        "http://localhost:5000/instructors-all"
+        "https://assignment-server-12-indol.vercel.app/instructors-all"
       );
       const instructorsData = await instructorsResponse.json();
       setTotalInstructors(instructorsData.length);
 
       const classesResponse = await fetch(
-        "http://localhost:5000/classes"
+        "https://assignment-server-12-indol.vercel.app/classes"
       );
       const classesData = await classesResponse.json();
       setTotalClasses(classesData.length);

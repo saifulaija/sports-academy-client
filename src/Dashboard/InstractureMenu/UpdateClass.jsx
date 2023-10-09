@@ -22,7 +22,7 @@ const UpdateClass = () => {
     const updateClass = { name, photo, seats, price };
 
     fetch(
-      `http://localhost:5000/classes/${update._id}`,
+      `https://assignment-server-12-indol.vercel.app/classes/${update._id}`,
       {
         method: "PUT",
         headers: {

@@ -12,19 +12,19 @@
 //   useEffect(() => {
 //     const fetchData = async () => {
 //       const usersResponse = await fetch(
-//         `http://localhost:5000/bookings/${user?.email}`
+//         `https://assignment-server-12-indol.vercel.app/bookings/${user?.email}`
 //       );
 //       const usersData = await usersResponse.json();
 //       setTotalClassesSelect(usersData.length);
 
 //       const instructorsResponse = await fetch(
-//         `http://localhost:5000/payment-all/${user?.email}`
+//         `https://assignment-server-12-indol.vercel.app/payment-all/${user?.email}`
 //       );
 //       const instructorsData = await instructorsResponse.json();
 //       setTotalInstructors(instructorsData.length);
 
 //       const classesResponse = await fetch(
-//         `http://localhost:5000/payment-all/${user?.email}`
+//         `https://assignment-server-12-indol.vercel.app/payment-all/${user?.email}`
 //       );
 //       const classesData = await classesResponse.json();
 //       setTotalClasses(classesData.length);
@@ -86,19 +86,19 @@ const DashboardStudent = () => {
   useEffect(() => {
     const fetchData = async () => {
       const usersResponse = await fetch(
-        `http://localhost:5000/bookings/${user?.email}`
+        `https://assignment-server-12-indol.vercel.app/bookings/${user?.email}`
       );
       const usersData = await usersResponse.json();
       setTotalClassesSelect(usersData.length);
 
       const instructorsResponse = await fetch(
-        `http://localhost:5000/payment-all/${user?.email}`
+        `https://assignment-server-12-indol.vercel.app/payment-all/${user?.email}`
       );
       const instructorsData = await instructorsResponse.json();
       setTotalInstructors(instructorsData.length);
 
       const classesResponse = await fetch(
-        `http://localhost:5000/payment-all/${user?.email}`
+        `https://assignment-server-12-indol.vercel.app/payment-all/${user?.email}`
       );
       const classesData = await classesResponse.json();
       setTotalClasses(classesData.length);
