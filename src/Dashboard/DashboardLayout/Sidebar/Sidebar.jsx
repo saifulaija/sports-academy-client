@@ -30,16 +30,17 @@ const Sidebar = () => {
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className=" text-black flex justify-between md:hidden">
+      <div className=" text-black flex justify-between md:hidden border-b-2">
         <Helmet>
-          <title>Sports Academy - Dashboard</title>
+          <title>Sports Academy | Dashboard</title>
         </Helmet>
         <div>
           <div className="block cursor-pointer p-4 font-bold">
             <div className="flex items-center">
-              <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode>
-              <h1 className="text-indigo-500 font-serif  font-bold uppercase tracking-wider sm:text-4xl">
-                BD Sport Academy
+              {/* <FcSportsMode className="text-yellow-700 text-[40px] "></FcSportsMode> */}
+              <img src={logo} width={30} height={30} alt="" />
+              <h1 className="text-gray-500 font-serif  font-bold uppercase tracking-wider sm:text-4xl">
+                 Sport Academy
               </h1>
             </div>
           </div>
@@ -65,7 +66,7 @@ const Sidebar = () => {
         <div className="flex items-center">
           <img src={logo} width={30} height={30} alt="" />
           <h1 className="text-gray-500 font-serif uppercase tracking-wider text-sm">
-            BD Sport Academy
+           Sport Academy
           </h1>
         </div>
       </div>
