@@ -11,8 +11,8 @@ const Payment = () => {
 
   console.log(paymentData);
   return (
-    <div className="p-20 w-full flex justify-center items-center text-center font-mono">
-      <div className=" p-10 border-yellow-400 shadow-2xl rounded-2xl">
+    <div className="md:p-20 w-full flex justify-center  items-center text-center font-mono">
+      <div className=" p-10 border border-pink-500  rounded-2xl">
         <div className="flex justify-center items-center p-4">
           <img
             className="object-cover rounded-xl"

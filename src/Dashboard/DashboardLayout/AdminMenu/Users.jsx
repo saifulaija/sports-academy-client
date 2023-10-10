@@ -62,7 +62,7 @@ const Users = () => {
       {
         isLoading? <><Loader></Loader></>:<>
         
-        <table className="w-full border-collapse border border-gray-300 mt-10">
+        {/* <table className="w-full  border border-gray-300 mt-10">
         <thead>
           <tr className="bg-gray-100">
             <th className="py-2 px-4 text-left">Name</th>
@@ -106,7 +106,58 @@ const Users = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
+
+<div className="max-h-screen overflow-y-auto">
+  <table className="w-full border border-gray-300 mt-10">
+    <thead>
+      <tr className="bg-gray-100">
+        <th className="py-2 px-4 text-left">Name</th>
+        <th className="py-2 px-4 text-left">Email</th>
+        <th className="py-2 px-4 text-left">Role</th>
+        <th className="py-2 px-4 text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {currentUsers.map((item, index) => (
+        <tr key={item._id} className="border-b border-gray-300">
+          <td className="py-2 px-4">{item.name}</td>
+          <td className="py-2 px-4">{item.email}</td>
+          <td className="py-2 px-4">{item.role ? item.role : 'student'}</td>
+          <td className="py-2 px-4 flex gap-2 text-center">
+            <button
+              onClick={() => handleMakeInstructor(item)}
+              disabled={item.role === 'instructor'}
+              className={`${
+                item.role === 'instructor'
+                  ? 'bg-gray-200 cursor-not-allowed'
+                  : 'btn-fourth'
+              } px-2 py-1 rounded`}
+            >
+              Make Instructor
+            </button>
+            <button
+              onClick={() => handleMakeAdmin(item)}
+              disabled={item.role === 'admin'}
+              className={`${
+                item.role === 'admin'
+                  ? 'bg-gray-200 cursor-not-allowed'
+                  : 'btn-fourth'
+              } px-2 py-1 rounded`}
+            >
+              Make Admin
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
       <div className="flex justify-center gap-1 mt-6">
         {pageNumbers.map((pageNumber) => (
           <button

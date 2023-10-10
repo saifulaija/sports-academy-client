@@ -26,6 +26,10 @@ const MySelectedClasses = () => {
     },
   });
 
+   console.log('booking', booking);
+  const newBooking = booking.filter(item=> item.payment === 'pending')
+  console.log(newBooking);
+
   // const remaining = booking.filter((item) => (item.payment = "pending"));
   // setBookingClasses(remaining);
 
@@ -53,23 +57,23 @@ const MySelectedClasses = () => {
    {
     booking && Array.isArray(booking) && booking.length > 0 ?  <div className="w-full font-mono font-semibold">
     <h3 className="heading-st">
-      Your total selected class: {booking.length}
+      Your total selected class: {newBooking?.length}
     </h3>
     <div className="overflow-x-auto">
       <table className="table text-neutral-500   font-mono">
         {/* head */}
         <thead className="text-[18px]">
           <tr>
-            <th>#</th>
+            <th>Serial No</th>
             <th>Class Name</th>
             <th>Price</th>
             <th>Available Seats</th>
-            <th>Role</th>
+            <th>Action</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {booking.map((item, index) => (
+          {newBooking?.map((item, index) => (
             <tr key={item._id}>
               <th>{index + 1}</th>
               <td>{item.name}</td>
@@ -80,7 +84,7 @@ const MySelectedClasses = () => {
                   onClick={() => handleDelete(item._id)}
                   className="btn-fourth"
                 >
-                  <TiDocumentDelete className="inline-block"></TiDocumentDelete>{" "}
+                  {/* <TiDocumentDelete className="inline-block"></TiDocumentDelete>{" "} */}
                   Delete
                 </button>
               </td>
@@ -89,7 +93,7 @@ const MySelectedClasses = () => {
                   {" "}
                   <button className="btn-fourth">
                     {" "}
-                    <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "}
+                    {/* <AiOutlineDollarCircle className="inline-block"></AiOutlineDollarCircle>{" "} */}
                     Pay
                   </button>
                 </Link>

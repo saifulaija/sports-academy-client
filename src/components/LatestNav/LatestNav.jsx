@@ -169,7 +169,7 @@ const LatestNav = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white focus:outline-none"
+              className="text-green focus:outline-none"
             >
               <FaBars size={24} />
             </button>

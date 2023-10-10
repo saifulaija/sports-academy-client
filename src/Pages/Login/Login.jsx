@@ -62,7 +62,7 @@
 //       <Helmet>
 //         <title> Sports Academy || Login</title>
 //       </Helmet>
-    
+
 //         <div className="flex  border-[1px]  flex-col max-w-md rounded-md  w-full p-5 text-gray-900">
 //           <div className="mb-8 text-center">
 //             <h1 className="heading-st">Login Now</h1>
@@ -143,24 +143,22 @@
 //           </p>
 //         </div>
 //       </div>
-    
+
 //   );
 // };
 
 // export default Login;
 
-
-
-import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaUser, FaEnvelope, FaUserTie } from 'react-icons/fa';
-import { AiFillEyeInvisible } from 'react-icons/ai';
-import { FcGoogle } from 'react-icons/fc';
-import { useForm } from 'react-hook-form';
-import { AuthContext } from '../../Providers/AuthProvider';
-import { toast } from 'react-hot-toast';
-import { saveUser } from '../../api/auth';
-import { Helmet } from 'react-helmet-async';
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaUser, FaEnvelope, FaUserTie } from "react-icons/fa";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
+import { saveUser } from "../../api/auth";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { logIn, signInGoogle, setLoading } = useContext(AuthContext);
@@ -169,7 +167,7 @@ const Login = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from.pathname || '/';
+  const from = location.state?.from.pathname || "/";
 
   const {
     register,
@@ -183,7 +181,7 @@ const Login = () => {
     logIn(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
-        toast.success('Login Successful');
+        toast.success("Login Successful");
         saveUser(loggedUser);
         setIsLoading(false); // Hide loading spinner
         navigate(from, { replace: true });
@@ -199,7 +197,7 @@ const Login = () => {
     setIsLoading(true); // Show loading spinner
     signInGoogle()
       .then((result) => {
-        toast.success('Login Successful');
+        toast.success("Login Successful");
         saveUser(result.user);
         setIsLoading(false); // Hide loading spinner
         navigate(from, { replace: true });
@@ -223,7 +221,9 @@ const Login = () => {
       <div className="flex  border-[1px]  flex-col max-w-md rounded-md w-full p-5 text-gray-900">
         <div className="mb-8 text-center">
           <h1 className="heading-st">Login Now</h1>
-          <p className="text-sm text-gray-400">Sign in to access your account</p>
+          <p className="text-sm text-gray-400">
+            Sign in to access your account
+          </p>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -239,7 +239,7 @@ const Login = () => {
               <input
                 type="email"
                 required
-                {...register('email')}
+                {...register("email")}
                 placeholder="Enter Your Email Here"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-gray-500 bg-gray-200 text-gray-900"
                 data-temp-mail-org="0"
@@ -252,15 +252,15 @@ const Login = () => {
                 </label>
               </div>
               <input
-                type={state ? 'text' : 'password'}
-                {...register('password')}
+                type={state ? "text" : "password"}
+                {...register("password")}
                 placeholder="Enter Your Password Here"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-gray-500 bg-gray-200 text-gray-900"
                 data-temp-mail-org="0"
               />
               <AiFillEyeInvisible
                 onClick={handleHideShow}
-                className="ml-80 top-[40px] md:top-[46px] absolute"
+                className=" ml-[300px]  md:ml-[350px]    top-[40px] md:top-[46px] absolute"
               ></AiFillEyeInvisible>
             </div>
           </div>
@@ -271,11 +271,11 @@ const Login = () => {
                 <div className="flex items-center justify-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2  border-green-500"></div>
                   <span className="ml-2">
-                    {isSubmitted ? 'Signing In...' : 'Sign In'}
+                    {isSubmitted ? "Signing In..." : "Sign In"}
                   </span>
                 </div>
               ) : (
-                'Sign In'
+                "Sign In"
               )}
             </button>
           </div>
@@ -311,4 +311,3 @@ const Login = () => {
 };
 
 export default Login;
-
