@@ -45,7 +45,7 @@ const UpdateClass = () => {
   };
 
   return (
-    <div className="w-full p-16">
+    <div className="w-full p-2 md:p-16">
       <h1 className="text-2xl text-center font-semibold mb-4 text-gray-900">
         Update Class
       </h1>

@@ -46,7 +46,7 @@ const AddClass = () => {
   };
 
   return (
-    <div className="w-full p-10 rounded container mx-auto border">
+    <div className="w-full p-2 md:p-10 rounded container mx-auto border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-900 text-center">
         Add Class
       </h1>

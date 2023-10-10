@@ -20,7 +20,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-4xl font-bold text-white mb-4">Welcome to</h1>
         </Fade>
         <Fade top delay={300}>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#ff6c2f] mb-6">Sports Academy</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-pink-900 mb-6">Sports Academy</h1>
         </Fade>
         <Fade top delay={600}>
           <p className="text-xl md:text-2xl text-white mb-8">
@@ -30,7 +30,7 @@ const HeroSection = () => {
         </Fade>
         <Fade top delay={900}>
           
-            <button className="bg-[#ff6c2f] hover:bg-[#502310] text-white px-6 py-1 rounded-md">
+            <button className="btn-fourth">
               <AiOutlineSearch className='inline-block' /> Explore
             </button>
           
