@@ -105,7 +105,7 @@ const DashboardStudent = () => {
     };
 
     fetchData();
-  }, []);
+  }, [user]);
 
   return (
     <div className="bg-gradient-to-b from-white to-gray-200 text-white min-h-screen p-8">
